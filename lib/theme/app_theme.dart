@@ -38,8 +38,22 @@ class AppTheme {
       fontFamily: GoogleFonts.sora().fontFamily,
       fontSize: 14,
       fontWeight: FontWeight.w500,
+      decorationStyle: TextDecorationStyle.solid,
+      decorationThickness: 2,
       color: Colors.blue[800],
       letterSpacing: 0.4);
+
+  static ButtonStyle underLineButtonStyle = ButtonStyle(
+      padding: const MaterialStatePropertyAll(EdgeInsets.all(0)),
+      mouseCursor: MaterialStateMouseCursor.clickable,
+      textStyle: MaterialStatePropertyAll(blueText),
+      splashFactory: NoSplash.splashFactory,
+      overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+      backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
+      animationDuration: const Duration(milliseconds: 400),
+      foregroundColor: const MaterialStatePropertyAll(Colors.black87),
+      shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))));
 
   static ButtonStyle textButtonStyle = ButtonStyle(
       splashFactory: NoSplash.splashFactory,

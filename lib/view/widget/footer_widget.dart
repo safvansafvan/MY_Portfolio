@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
+import 'package:myportfolio/controller/utils/project_details.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -45,10 +46,26 @@ class FooterWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: [
-                    Text('Home', style: AppTheme.blueText),
+                    TextButton(
+                      style: AppTheme.underLineButtonStyle,
+                      onPressed: () {},
+                      child: Text(
+                        'Home',
+                        style: TextStyle(color: Colors.blue[500]),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Text('Resume', style: AppTheme.blueText),
+                      child: TextButton(
+                        style: AppTheme.underLineButtonStyle,
+                        onPressed: () {
+                          controller.redirectToWeb(ProjectDetails.resumeURL);
+                        },
+                        child: Text(
+                          'Resume',
+                          style: TextStyle(color: Colors.blue[500]),
+                        ),
+                      ),
                     ),
                     Image.asset('assets/icon/linkedin.png',
                         height: 20, color: Colors.black),

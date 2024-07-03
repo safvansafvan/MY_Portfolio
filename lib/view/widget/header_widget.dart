@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/controller/global_controller.dart';
+import 'package:myportfolio/controller/utils/project_details.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({
-    super.key,
-  });
+  const HeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class HeaderWidget extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20, bottom: 35),
               child: RichText(
                 text: TextSpan(
-                    text: 'A Toronto based Product Designer',
+                    text: 'A Flutter developer from India',
                     style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.w500,
@@ -48,13 +47,13 @@ class HeaderWidget extends StatelessWidget {
                         letterSpacing: 1.2),
                     children: const [
                       TextSpan(
-                        text: ' with a passion for \ndesigning elegant and ',
+                        text: '  with a passion for crafting elegant and ',
                         style: TextStyle(
                           fontSize: 35,
                           color: Colors.black38,
                         ),
                       ),
-                      TextSpan(text: 'intuitive data driven experiences.'),
+                      TextSpan(text: 'intuitive data-driven experiences.'),
                     ]),
               ),
             ),
@@ -66,7 +65,11 @@ class HeaderWidget extends StatelessWidget {
                       controller.resumeButtonState();
                     },
                     onExit: (event) => controller.resumeButtonState(),
-                    child: InkWell(
+                    child: GestureDetector(
+                      onTap: () async {
+                        await controller
+                            .redirectToWeb(ProjectDetails.resumeURL);
+                      },
                       child: AnimatedContainer(
                         height: 70,
                         width: 150,

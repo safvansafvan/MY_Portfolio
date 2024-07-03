@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GlobalController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -31,5 +32,11 @@ class GlobalController extends GetxController
   void resumeButtonState() {
     isResumeButtonHover = !isResumeButtonHover;
     update();
+  }
+
+  Future<void> redirectToWeb(Uri uri) async {
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $uri');
+    }
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myportfolio/controller/global_controller.dart';
+import 'package:myportfolio/controller/utils/project_details.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -9,6 +12,7 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<GlobalController>();
     return Padding(
       padding: const EdgeInsets.only(top: 50),
       child: AppBar(
@@ -35,7 +39,9 @@ class AppBarWidget extends StatelessWidget {
                 ),
               )),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.redirectToWeb(ProjectDetails.resumeURL);
+            },
             style: AppTheme.textButtonStyle,
             child: Text(
               'resume',
