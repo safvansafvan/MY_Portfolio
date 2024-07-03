@@ -40,7 +40,7 @@ class AppBarWidget extends StatelessWidget {
               )),
           TextButton(
             onPressed: () {
-              controller.redirectToWeb(ProjectDetails.resumeURL);
+              controller.redirectToWeb(ProjectDetails.resumeDriveURL);
             },
             style: AppTheme.textButtonStyle,
             child: Text(

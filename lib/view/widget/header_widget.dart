@@ -68,7 +68,7 @@ class HeaderWidget extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () async {
                         await controller
-                            .redirectToWeb(ProjectDetails.resumeURL);
+                            .redirectToWeb(ProjectDetails.resumeDriveURL);
                       },
                       child: AnimatedContainer(
                         height: 70,
@@ -108,18 +108,32 @@ class HeaderWidget extends StatelessWidget {
                   );
                 }),
                 const SizedBox(width: 15),
-                CircleAvatar(
-                  radius: 35,
-                  backgroundColor: Colors.black87,
-                  child: Image.asset('assets/icon/linkedin.png',
-                      height: 20, color: Colors.white),
+                MouseRegion(
+                  cursor: MouseCursor.defer,
+                  child: GestureDetector(
+                    onTap: () async {
+                      await controller
+                          .redirectToWeb(ProjectDetails.linkedinURL);
+                    },
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.black87,
+                      child: Image.asset('assets/icon/linkedin.png',
+                          height: 20, color: Colors.white),
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 8),
-                CircleAvatar(
-                  radius: 35,
-                  backgroundColor: Colors.black87,
-                  child: Image.asset('assets/icon/mail.png',
-                      height: 20, color: Colors.white),
+                GestureDetector(
+                  onTap: () async {
+                    await controller.redirectToWeb(ProjectDetails.gmailURL);
+                  },
+                  child: CircleAvatar(
+                    radius: 35,
+                    backgroundColor: Colors.black87,
+                    child: Image.asset('assets/icon/mail.png',
+                        height: 20, color: Colors.white),
+                  ),
                 )
               ],
             ),

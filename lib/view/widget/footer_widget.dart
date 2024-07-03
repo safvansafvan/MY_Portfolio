@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
@@ -39,7 +41,12 @@ class FooterWidget extends StatelessWidget {
                     'Get in touch below or directly at  ',
                     style: AppTheme.smallText,
                   ),
-                  Text('sajusajuptl@gmail.com', style: AppTheme.blueSmallText),
+                  GestureDetector(
+                      onTap: () async {
+                        await controller.redirectToWeb(ProjectDetails.gmailURL);
+                      },
+                      child: Text('sajusajuptl@gmail.com',
+                          style: AppTheme.blueSmallText)),
                 ],
               ),
               Padding(
@@ -59,7 +66,8 @@ class FooterWidget extends StatelessWidget {
                       child: TextButton(
                         style: AppTheme.underLineButtonStyle,
                         onPressed: () {
-                          controller.redirectToWeb(ProjectDetails.resumeURL);
+                          controller
+                              .redirectToWeb(ProjectDetails.resumeDriveURL);
                         },
                         child: Text(
                           'Resume',
@@ -67,12 +75,24 @@ class FooterWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Image.asset('assets/icon/linkedin.png',
-                        height: 20, color: Colors.black),
+                    GestureDetector(
+                      onTap: () async {
+                        await controller
+                            .redirectToWeb(ProjectDetails.linkedinURL);
+                      },
+                      child: Image.asset('assets/icon/linkedin.png',
+                          height: 20, color: Colors.black),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.asset('assets/icon/github.png',
-                          height: 20, color: Colors.black),
+                      child: GestureDetector(
+                        onTap: () async {
+                          await controller
+                              .redirectToWeb(ProjectDetails.githubURL);
+                        },
+                        child: Image.asset('assets/icon/github.png',
+                            height: 20, color: Colors.black),
+                      ),
                     ),
                   ],
                 ),
