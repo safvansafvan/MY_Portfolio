@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myportfolio/theme/app_theme.dart';
+
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 50),
+      child: AppBar(
+        surfaceTintColor: Colors.transparent,
+        title: const Text('Muhammed Safvan'),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            style: AppTheme.textButtonStyle,
+            child: Text(
+              'about',
+              style: TextStyle(
+                fontFamily: GoogleFonts.sora().fontFamily,
+              ),
+            ),
+          ),
+          TextButton(
+              onPressed: () {},
+              style: AppTheme.textButtonStyle,
+              child: Text(
+                'work',
+                style: TextStyle(
+                  fontFamily: GoogleFonts.sora().fontFamily,
+                ),
+              )),
+          TextButton(
+            onPressed: () {},
+            style: AppTheme.textButtonStyle,
+            child: Text(
+              'resume',
+              style: TextStyle(
+                fontFamily: GoogleFonts.sora().fontFamily,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
