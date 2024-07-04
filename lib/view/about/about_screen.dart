@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:myportfolio/view/widget/about_me_widget/about_me_card.dart';
+import 'package:myportfolio/view/widget/about_me_widget/experince_card.dart';
 import 'package:myportfolio/view/widget/app_bar.dart';
+import 'package:myportfolio/view/widget/footer_widget.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -17,7 +19,12 @@ class AboutScreen extends StatelessWidget {
             controller: context.scrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [const AppBarWidget(), AboutMeCardWidget()],
+              children: [
+                AppBarWidget(),
+                AboutMeCardWidget(),
+                ExperienceCardWidget(),
+                FooterWidget()
+              ],
             ),
           ),
         ),
