@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:myportfolio/view/widget/app_bar.dart';
 import 'package:myportfolio/view/widget/footer_widget.dart';
@@ -21,10 +20,13 @@ class HomeView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const AppBarWidget(),
-                FadeInLeft(globalKey: GlobalKey(), child: const HeaderWidget()),
-                FadeInLeft(globalKey: GlobalKey(), child: const MyWorkWidget()),
-                FadeInLeft(globalKey: GlobalKey(), child: const FooterWidget())
+                FadeInRight(
+                    globalKey: GlobalKey(), child: const AppBarWidget()),
+                FadeInRight(
+                    globalKey: GlobalKey(), child: const HeaderWidget()),
+                FadeInRight(
+                    globalKey: GlobalKey(), child: const MyWorkWidget()),
+                FadeInRight(globalKey: GlobalKey(), child: const FooterWidget())
               ],
             ),
           ),
