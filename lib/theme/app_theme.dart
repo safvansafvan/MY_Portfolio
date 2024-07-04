@@ -2,6 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
+  static TextStyle aboutLargeTitleStyle = TextStyle(
+      fontFamily: GoogleFonts.sora().fontFamily,
+      fontSize: 30,
+      fontWeight: FontWeight.w500,
+      color: Colors.black87,
+      letterSpacing: 0.6);
+
+  static TextStyle aboutCardText = TextStyle(
+      fontFamily: GoogleFonts.sora().fontFamily,
+      fontSize: 16,
+      height: 1.7,
+      fontWeight: FontWeight.w600,
+      color: Colors.black45,
+      letterSpacing: 0.6);
+
   static TextStyle titleStyle = TextStyle(
       fontFamily: GoogleFonts.sora().fontFamily,
       fontSize: 25,

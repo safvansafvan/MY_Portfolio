@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:myportfolio/view/widget/app_bar.dart';
 import 'package:myportfolio/view/widget/footer_widget.dart';
-import 'package:myportfolio/view/widget/header_widget.dart';
-import 'package:myportfolio/view/widget/my_work.dart';
+import 'package:myportfolio/view/widget/home_widget/header_widget.dart';
+import 'package:myportfolio/view/widget/home_widget/my_work.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

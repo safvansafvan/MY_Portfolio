@@ -197,7 +197,7 @@ class MyWorkWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
