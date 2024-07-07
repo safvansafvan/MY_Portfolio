@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
-import 'package:myportfolio/controller/utils/project_details.dart';
 import 'package:myportfolio/theme/app_theme.dart';
+import 'package:myportfolio/utils/project_url.dart';
 
 class AboutMeCardWidget extends StatelessWidget {
   const AboutMeCardWidget({super.key});
@@ -45,8 +45,8 @@ class AboutMeCardWidget extends StatelessWidget {
                               cursor: MouseCursor.defer,
                               child: GestureDetector(
                                 onTap: () async {
-                                  await controller.redirectToWeb(
-                                      ProjectDetails.linkedinURL);
+                                  await controller
+                                      .redirectToWeb(ProjectURL.linkedinURL);
                                 },
                                 child: CircleAvatar(
                                   radius: 35,
@@ -60,7 +60,7 @@ class AboutMeCardWidget extends StatelessWidget {
                             GestureDetector(
                               onTap: () async {
                                 await controller
-                                    .redirectToWeb(ProjectDetails.gmailURL);
+                                    .redirectToWeb(ProjectURL.gmailURL);
                               },
                               child: CircleAvatar(
                                 radius: 35,
@@ -80,7 +80,7 @@ class AboutMeCardWidget extends StatelessWidget {
                                 child: GestureDetector(
                                   onTap: () async {
                                     await controller.redirectToWeb(
-                                        ProjectDetails.resumeDriveURL);
+                                        ProjectURL.resumeDriveURL);
                                   },
                                   child: AnimatedContainer(
                                     height: 70,

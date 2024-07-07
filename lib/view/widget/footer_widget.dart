@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
-import 'package:myportfolio/controller/utils/project_details.dart';
 import 'package:myportfolio/theme/app_theme.dart';
+import 'package:myportfolio/utils/project_url.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
@@ -41,7 +41,7 @@ class FooterWidget extends StatelessWidget {
                   ),
                   GestureDetector(
                       onTap: () async {
-                        await controller.redirectToWeb(ProjectDetails.gmailURL);
+                        await controller.redirectToWeb(ProjectURL.gmailURL);
                       },
                       child: Text('sajusajuptl@gmail.com',
                           style: AppTheme.blueSmallText)),
@@ -64,8 +64,7 @@ class FooterWidget extends StatelessWidget {
                       child: TextButton(
                         style: AppTheme.underLineButtonStyle,
                         onPressed: () {
-                          controller
-                              .redirectToWeb(ProjectDetails.resumeDriveURL);
+                          controller.redirectToWeb(ProjectURL.resumeDriveURL);
                         },
                         child: Text(
                           'Resume',
@@ -75,8 +74,7 @@ class FooterWidget extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () async {
-                        await controller
-                            .redirectToWeb(ProjectDetails.linkedinURL);
+                        await controller.redirectToWeb(ProjectURL.linkedinURL);
                       },
                       child: Image.asset('assets/icon/linkedin.png',
                           height: 20, color: Colors.black),
@@ -85,8 +83,7 @@ class FooterWidget extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: GestureDetector(
                         onTap: () async {
-                          await controller
-                              .redirectToWeb(ProjectDetails.githubURL);
+                          await controller.redirectToWeb(ProjectURL.githubURL);
                         },
                         child: Image.asset('assets/icon/github.png',
                             height: 20, color: Colors.black),

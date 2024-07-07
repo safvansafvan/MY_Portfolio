@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/controller/global_controller.dart';
-import 'package:myportfolio/controller/utils/project_details.dart';
+import 'package:myportfolio/utils/project_url.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
@@ -68,7 +68,7 @@ class HeaderWidget extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () async {
                         await controller
-                            .redirectToWeb(ProjectDetails.resumeDriveURL);
+                            .redirectToWeb(ProjectURL.resumeDriveURL);
                       },
                       child: AnimatedContainer(
                         height: 70,
@@ -112,8 +112,7 @@ class HeaderWidget extends StatelessWidget {
                   cursor: MouseCursor.defer,
                   child: GestureDetector(
                     onTap: () async {
-                      await controller
-                          .redirectToWeb(ProjectDetails.linkedinURL);
+                      await controller.redirectToWeb(ProjectURL.linkedinURL);
                     },
                     child: CircleAvatar(
                       radius: 35,
@@ -126,7 +125,7 @@ class HeaderWidget extends StatelessWidget {
                 const SizedBox(width: 8),
                 GestureDetector(
                   onTap: () async {
-                    await controller.redirectToWeb(ProjectDetails.gmailURL);
+                    await controller.redirectToWeb(ProjectURL.gmailURL);
                   },
                   child: CircleAvatar(
                     radius: 35,

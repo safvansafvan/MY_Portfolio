@@ -6,6 +6,7 @@ class GlobalController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> animation;
+  ScrollController? scrollController;
 
   @override
   void onInit() {
