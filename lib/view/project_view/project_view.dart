@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:myportfolio/view/widget/app_bar.dart';
+import 'package:myportfolio/view/widget/project_details_widget/admin_section.dart';
 import 'package:myportfolio/view/widget/project_details_widget/details_header.dart';
 import 'package:myportfolio/view/widget/project_details_widget/highlight_features.dart';
 import 'package:myportfolio/view/widget/project_details_widget/scroll_image.dart';
@@ -31,7 +32,12 @@ class ProjectView extends StatelessWidget {
               ProjectDetailsHeaderWidget(projectDetails: projectDetails),
               TopProjectDetailsWidget(projectDetails: projectDetails),
               ProjectHighlightingFeatures(projectDetails: projectDetails),
-              ImageViewWidget(projectDetails: projectDetails)
+              const ImageViewWidget(
+                images: ['assets/project/nexon_ev/image1.jpeg'],
+              ),
+              projectDetails['admin'] != null
+                  ? AdminWidget(projectDetails: projectDetails)
+                  : const SizedBox(),
             ],
           ),
         ),

@@ -32,24 +32,27 @@ class ProjectDetails {
       'device': 'Android/IOS',
       'role': 'Brototype Intern',
       'type': 'Nexon EV Brototype Project',
-      'days': '35',
+      'days': '9',
       'tools': 'Flutter,Dart,NodeJs,Vs code,Postman,Figma',
       "images": [],
+      //admin only for nexon ev
       'admin': {
         "title": 'Nexon Ev Admin',
-        "mainSpec": [
-          'Authentication',
-        ],
+        'subtitle':
+            'Nexon EV Admin App is designed to provide a robust administrative interface for managing Nexon EV bookings and user interactions.The app offers a suite of features that streamline the booking process, enhance user management, and provide insightful analytics for better decision-making. ',
         "features": [
           'Developed using Flutter, Dart, Node.js with REST API.',
           'Authentication features including login with email and password.',
           'It listing Bookings and Test drive bookings , Total users and dealers',
           'Dashbord including total bookings count and company revenue details',
+          'Admin capabilities to add, delete, and block dealers',
+          'Admin controls to block users, ensuring a secure and managed environment.'
         ],
-        'toos': 'Flutter,Dart,NodeJs,Vs code,Postman,Figma',
         "images": []
       },
     },
+
+    //MUsic player
     {
       "title": 'Music Player',
       "fullTitle": 'Audizi Music Player',

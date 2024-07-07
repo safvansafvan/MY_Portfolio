@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ImageViewWidget extends StatefulWidget {
-  const ImageViewWidget({super.key, required this.projectDetails});
-  final Map<String, dynamic> projectDetails;
+  const ImageViewWidget({super.key, required this.images});
+  final List<String> images;
 
   @override
   State<ImageViewWidget> createState() => _ImageViewWidgetState();

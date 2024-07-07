@@ -38,7 +38,7 @@ class ProjectHighlightingFeatures extends StatelessWidget {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: projectDetails['features'].length,
