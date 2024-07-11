@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/controller/global_controller.dart';
@@ -61,6 +62,7 @@ class HeaderWidget extends StatelessWidget {
               children: [
                 GetBuilder<GlobalController>(builder: (controller) {
                   return MouseRegion(
+                    cursor: SystemMouseCursors.click,
                     onEnter: (event) {
                       controller.resumeButtonState();
                     },
@@ -109,7 +111,7 @@ class HeaderWidget extends StatelessWidget {
                 }),
                 const SizedBox(width: 15),
                 MouseRegion(
-                  cursor: MouseCursor.defer,
+                  cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                     onTap: () async {
                       await controller.redirectToWeb(ProjectURL.linkedinURL);
@@ -123,15 +125,18 @@ class HeaderWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                GestureDetector(
-                  onTap: () async {
-                    await controller.redirectToWeb(ProjectURL.gmailURL);
-                  },
-                  child: CircleAvatar(
-                    radius: 35,
-                    backgroundColor: Colors.black87,
-                    child: Image.asset('assets/icon/mail.png',
-                        height: 20, color: Colors.white),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () async {
+                      await controller.redirectToWeb(ProjectURL.gmailURL);
+                    },
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.black87,
+                      child: Image.asset('assets/icon/mail.png',
+                          height: 20, color: Colors.white),
+                    ),
                   ),
                 )
               ],

@@ -8,9 +8,7 @@ import 'package:myportfolio/utils/project_url.dart';
 import 'package:myportfolio/view/about/about_screen.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({
-    super.key,
-  });
+  const AppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +45,12 @@ class AppBarWidget extends StatelessWidget {
                 ),
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.scrollController.animateTo(
+                        context.scrollController.offset + 530,
+                        duration: const Duration(milliseconds: 1000),
+                        curve: Curves.linearToEaseOut);
+                  },
                   style: AppTheme.textButtonStyle,
                   child: Text(
                     'work',

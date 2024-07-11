@@ -11,8 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   get: ^4.6.6
   flutter_animate_on_scroll: ^0.0.2
@@ -31,6 +29,11 @@ flutter:
     - assets/gif/
     - assets/icon/
     - assets/project/nexon_ev/
+    - assets/project/nexon_admin/
+    - assets/project/weather/
+    - assets/project/wallet/
+    - assets/project/music/
+    - assets/images/
 
   # fonts:
   #   - family: Schyler

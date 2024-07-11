@@ -6,7 +6,6 @@ class GlobalController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> animation;
-  ScrollController? scrollController;
 
   @override
   void onInit() {
@@ -39,5 +38,12 @@ class GlobalController extends GetxController
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $uri');
     }
+  }
+
+  bool isNexonButton = false;
+
+  void nexonButtonState(bool v) {
+    isResumeButtonHover = v;
+    update();
   }
 }

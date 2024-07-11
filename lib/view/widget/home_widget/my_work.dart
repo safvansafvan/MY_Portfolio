@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
+
 import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 import 'package:myportfolio/utils/project_details.dart';
 import 'package:myportfolio/view/project_view/project_view.dart';
 
 class MyWorkWidget extends StatelessWidget {
-  const MyWorkWidget({
-    super.key,
-  });
+  const MyWorkWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,43 +62,56 @@ class MyWorkWidget extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20)),
                           ),
                           const Spacer(),
-                          MouseRegion(
-                            child: GestureDetector(
-                              onTap: () => Get.to(
-                                () => ProjectView(projectDetails: data[0]),
-                                curve: Curves.easeInOut,
-                                transition: Transition.fade,
-                                duration: const Duration(milliseconds: 500),
-                              ),
-                              child: AnimatedContainer(
-                                margin: const EdgeInsets.only(top: 40),
-                                height: 60,
-                                width: 150,
-                                duration: const Duration(milliseconds: 400),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Colors.black45, width: 2),
-                                  borderRadius: BorderRadius.circular(20),
+                          GetBuilder<GlobalController>(builder: (controller) {
+                            return MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              onEnter: (_) {
+                                controller.nexonButtonState(true);
+                              },
+                              onExit: (_) => controller.nexonButtonState(false),
+                              child: GestureDetector(
+                                onTap: () => Get.to(
+                                  () => ProjectView(projectDetails: data[0]),
+                                  curve: Curves.easeInOut,
+                                  transition: Transition.fade,
+                                  duration: const Duration(milliseconds: 500),
                                 ),
-                                child: const Center(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(width: 5),
-                                      Text(
-                                        'View Project',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.black87,
-                                            letterSpacing: 0.4),
-                                      ),
-                                    ],
+                                child: AnimatedContainer(
+                                  margin: const EdgeInsets.only(top: 40),
+                                  height: 60,
+                                  width: 150,
+                                  duration: const Duration(milliseconds: 400),
+                                  decoration: BoxDecoration(
+                                    color: controller.isNexonButton
+                                        ? Colors.black87
+                                        : null,
+                                    border: Border.all(
+                                        color: Colors.black45, width: 2),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Center(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(width: 5),
+                                        Text(
+                                          'View Project',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: !controller.isNexonButton
+                                                  ? Colors.black87
+                                                  : Colors.white,
+                                              letterSpacing: 0.4),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          )
+                            );
+                          }),
                         ],
                       ),
                     ),
@@ -204,7 +215,13 @@ class MyWorkWidget extends StatelessWidget {
                           ),
                           const Spacer(),
                           MouseRegion(
-                            child: InkWell(
+                            child: GestureDetector(
+                              onTap: () => Get.to(
+                                () => ProjectView(projectDetails: data[3]),
+                                curve: Curves.easeInOut,
+                                transition: Transition.fade,
+                                duration: const Duration(milliseconds: 500),
+                              ),
                               child: AnimatedContainer(
                                 margin: const EdgeInsets.only(top: 40),
                                 height: 60,

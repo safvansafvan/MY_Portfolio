@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
@@ -42,7 +43,7 @@ class AboutMeCardWidget extends StatelessWidget {
                         Row(
                           children: [
                             MouseRegion(
-                              cursor: MouseCursor.defer,
+                              cursor: SystemMouseCursors.click,
                               child: GestureDetector(
                                 onTap: () async {
                                   await controller
@@ -57,21 +58,25 @@ class AboutMeCardWidget extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(width: 8),
-                            GestureDetector(
-                              onTap: () async {
-                                await controller
-                                    .redirectToWeb(ProjectURL.gmailURL);
-                              },
-                              child: CircleAvatar(
-                                radius: 35,
-                                backgroundColor: Colors.black87,
-                                child: Image.asset('assets/icon/mail.png',
-                                    height: 20, color: Colors.white),
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () async {
+                                  await controller
+                                      .redirectToWeb(ProjectURL.gmailURL);
+                                },
+                                child: CircleAvatar(
+                                  radius: 35,
+                                  backgroundColor: Colors.black87,
+                                  child: Image.asset('assets/icon/mail.png',
+                                      height: 20, color: Colors.white),
+                                ),
                               ),
                             ),
                             const SizedBox(width: 10),
                             GetBuilder<GlobalController>(builder: (controller) {
                               return MouseRegion(
+                                cursor: SystemMouseCursors.click,
                                 onEnter: (event) {
                                   controller.resumeButtonState();
                                 },
@@ -189,8 +194,36 @@ class AboutMeCardWidget extends StatelessWidget {
                   child: Container(
                     width: 350,
                     decoration: BoxDecoration(
-                        color: Colors.blue[300],
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/my_img.jpg')),
                         borderRadius: BorderRadius.circular(20)),
+                  ),
+                ),
+                Positioned(
+                  left: 280,
+                  top: 200,
+                  child: Container(
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    decoration: const BoxDecoration(
+                      color: Colors.black54,
+                      borderRadius: BorderRadiusDirectional.only(
+                        topEnd: Radius.circular(20),
+                        bottomStart: Radius.circular(20),
+                        topStart: Radius.circular(0),
+                        bottomEnd: Radius.circular(20),
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Hai i'm Safvan",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
                 )
               ],
