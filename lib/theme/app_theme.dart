@@ -82,7 +82,7 @@ class AppTheme {
   static ButtonStyle elevatedButtonStyle = ButtonStyle(
       splashFactory: NoSplash.splashFactory,
       backgroundColor: const MaterialStatePropertyAll(Colors.black87),
-      overlayColor: MaterialStatePropertyAll(Colors.blue[100]!),
+      overlayColor: MaterialStatePropertyAll(Colors.grey[500]),
       animationDuration: const Duration(milliseconds: 500),
       shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))));
