@@ -13,7 +13,7 @@ class MyWorkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = ProjectDetails.projectData;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 60),
+      padding: const EdgeInsets.symmetric(horizontal: 118, vertical: 60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

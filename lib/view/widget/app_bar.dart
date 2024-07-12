@@ -16,7 +16,7 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: const EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 100).copyWith(top: 50),
       child: AppBar(
         leadingWidth: 0,
         automaticallyImplyLeading: false,

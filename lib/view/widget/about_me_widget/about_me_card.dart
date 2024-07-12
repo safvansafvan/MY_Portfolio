@@ -126,30 +126,33 @@ class AboutMeCardWidget extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 50),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey[300]),
+                      color: Colors.grey[200]),
                   child: Padding(
                     padding: const EdgeInsets.only(top: 50, bottom: 30),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 100),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                width: 300,
-                                child: Text(
-                                  "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
-                                  style: AppTheme.aboutCardText,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 300),
+                                child: SizedBox(
+                                  width: 350,
+                                  child: Text(
+                                    "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                                    style: AppTheme.aboutCardText,
+                                  ),
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 50),
                                 child: SizedBox(
-                                  width: 300,
+                                  width: 350,
                                   child: Text(
                                     "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
                                     style: AppTheme.aboutCardText,
@@ -161,9 +164,9 @@ class AboutMeCardWidget extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20)
-                              .copyWith(right: 20),
+                              .copyWith(right: 20, left: 400),
                           child: SizedBox(
-                            width: 630,
+                            width: 730,
                             child: Text(
                               "Currently i am working at CredR, I developed applications using Flutter,Dart,RestApi with GetX Mobx,MVVM And MVC architecture and deploying apps on Play Store and App Store Connect.",
                               style: AppTheme.aboutCardText,
@@ -190,7 +193,7 @@ class AboutMeCardWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 280,
+              left: 265,
               top: 200,
               child: Container(
                 height: 40,
