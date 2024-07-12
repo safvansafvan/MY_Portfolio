@@ -48,7 +48,7 @@ class _ProjectViewState extends State<ProjectView>
               0,
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 110),
-                child: AppBarWidget(),
+                child: AppBarWidget(isWorkButtonClick: true),
               ),
             ),
             _buildAnimatedWidget(
@@ -67,7 +67,8 @@ class _ProjectViewState extends State<ProjectView>
                 ? _buildAnimatedWidget(
                     5, AdminWidget(projectDetails: widget.projectDetails))
                 : const SizedBox(),
-            _buildAnimatedWidget(6, const NextProjectWidget()),
+            _buildAnimatedWidget(
+                6, NextProjectWidget(projectDetails: widget.projectDetails)),
             _buildAnimatedWidget(
               7,
               const Padding(

@@ -37,6 +37,8 @@ class ProjectDetails {
       'days': '36',
       'tools': 'Flutter,Dart,NodeJs,Vs code,Postman,Figma',
       'focusImage': 'assets/project/nexon_ev/focus_image.png',
+      'previous': '',
+      'nextProject': 'Music Player',
       'applink': 'https://www.amazon.com/gp/product/B0CL4G5Y2X',
       "images": [
         'assets/project/nexon_ev/s1.png',
@@ -121,6 +123,8 @@ class ProjectDetails {
       'type': 'Audizi Brototype Project',
       'days': '28',
       'tools': 'Flutter,Dart,Vs code,Figma',
+      'previous': 'Nexon Ev',
+      'nextProject': 'Wallet App',
       'focusImage': 'assets/project/music/focus_image.png',
       'applink': 'https://www.amazon.com/gp/product/B0CL4G5Y2X',
       "images": [
@@ -183,6 +187,8 @@ class ProjectDetails {
       'type': 'Prefessional Project',
       'days': '18',
       'tools': 'Flutter,Dart,Vs code,Figma,EmailJs',
+      'previous': 'Music Player',
+      'nextProject': 'Weather App',
       'focusImage': 'assets/project/wallet/focus_image.png',
       'applink': 'https://www.amazon.com/gp/product/B0CLKW1ZZJ',
       "images": [
@@ -235,6 +241,8 @@ class ProjectDetails {
       'type': 'Prefessional Project',
       'days': '7',
       'tools': 'Flutter,Dart,Weather Api, Vs code,Figma',
+      'previous': 'Wallet App',
+      'nextProject': '',
       'focusImage': 'assets/project/weather/focus_image.png',
       'applink': 'https://www.amazon.com/gp/product/B0CLKVWV3Q',
       "images": [

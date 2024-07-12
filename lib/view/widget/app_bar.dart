@@ -5,6 +5,7 @@ import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 import 'package:myportfolio/utils/project_url.dart';
 import 'package:myportfolio/view/about/about_screen.dart';
+import 'package:myportfolio/view/home/home.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key, this.isWorkButtonClick});
@@ -20,7 +21,20 @@ class AppBarWidget extends StatelessWidget {
         leadingWidth: 0,
         automaticallyImplyLeading: false,
         surfaceTintColor: Colors.transparent,
-        title: const Text('Muhammed Safvan'),
+        title: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              Get.offAll(
+                () => const HomeView(),
+                curve: Curves.easeInOut,
+                transition: Transition.fade,
+                duration: const Duration(milliseconds: 500),
+              );
+            },
+            child: const Text('Muhammed Safvan'),
+          ),
+        ),
         actions: [
           TextButton(
             onPressed: () {
@@ -40,28 +54,29 @@ class AppBarWidget extends StatelessWidget {
             ),
           ),
           TextButton(
-              onPressed: () {
-                if (isWorkButtonClick == true) {
-                  Navigator.pop(context);
+            onPressed: () {
+              if (isWorkButtonClick == true) {
+                Navigator.pop(context);
 
-                  controller.homeScrollController.animateTo(
-                      controller.homeScrollController.offset + 530,
-                      duration: const Duration(milliseconds: 1000),
-                      curve: Curves.linearToEaseOut);
-                } else {
-                  controller.homeScrollController.animateTo(
-                      controller.homeScrollController.offset + 530,
-                      duration: const Duration(milliseconds: 1000),
-                      curve: Curves.linearToEaseOut);
-                }
-              },
-              style: AppTheme.textButtonStyle,
-              child: Text(
-                'work',
-                style: TextStyle(
-                  fontFamily: GoogleFonts.sora().fontFamily,
-                ),
-              )),
+                controller.homeScrollController.animateTo(
+                    controller.homeScrollController.offset + 530,
+                    duration: const Duration(milliseconds: 1000),
+                    curve: Curves.linearToEaseOut);
+              } else {
+                controller.homeScrollController.animateTo(
+                    controller.homeScrollController.offset + 530,
+                    duration: const Duration(milliseconds: 1000),
+                    curve: Curves.linearToEaseOut);
+              }
+            },
+            style: AppTheme.textButtonStyle,
+            child: Text(
+              'work',
+              style: TextStyle(
+                fontFamily: GoogleFonts.sora().fontFamily,
+              ),
+            ),
+          ),
           TextButton(
             onPressed: () {
               controller.redirectToWeb(ProjectURL.resumeDriveURL);

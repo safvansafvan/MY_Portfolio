@@ -341,7 +341,7 @@ class MyWorkWidget extends StatelessWidget {
                       onExit: (_) => controller.weatherButtonState(false),
                       child: GestureDetector(
                         onTap: () => Get.to(
-                          () => ProjectView(projectDetails: data[0]),
+                          () => ProjectView(projectDetails: data[3]),
                           curve: Curves.easeInOut,
                           transition: Transition.fade,
                           duration: const Duration(milliseconds: 500),
