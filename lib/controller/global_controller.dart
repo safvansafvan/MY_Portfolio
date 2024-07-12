@@ -41,9 +41,27 @@ class GlobalController extends GetxController
   }
 
   bool isNexonButton = false;
+  bool isMusicPlayerButton = false;
+  bool isWalletButton = false;
+  bool isWeatherButton = false;
 
   void nexonButtonState(bool v) {
-    isResumeButtonHover = v;
+    isNexonButton = v;
+    update();
+  }
+
+  void musicButtonState(bool v) {
+    isMusicPlayerButton = v;
+    update();
+  }
+
+  void walletButtonState(bool v) {
+    isWalletButton = v;
+    update();
+  }
+
+  void weatherButtonState(bool v) {
+    isWeatherButton = v;
     update();
   }
 }

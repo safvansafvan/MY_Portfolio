@@ -1,5 +1,6 @@
 class ProjectDetails {
   static List<Map<String, dynamic>> projectData = [
+    // ----------------------------------NEXON EV----------------------------------------------------------------
     {
       "title": 'Nexon Ev',
       "fullTitle": 'Nexon Ev Booking App',
@@ -82,7 +83,8 @@ class ProjectDetails {
       },
     },
 
-    //MUsic player
+    // ----------------------------------MUSIC PLAYER----------------------------------------------------------------
+
     {
       "title": 'Music Player',
       "fullTitle": 'Audizi Music Player',
@@ -116,7 +118,7 @@ class ProjectDetails {
       ],
       'device': 'Android/IOS',
       'role': 'Brototype Intern',
-      'type': 'Nexon EV Brototype Project',
+      'type': 'Audizi Brototype Project',
       'days': '28',
       'tools': 'Flutter,Dart,Vs code,Figma',
       'focusImage': 'assets/project/music/focus_image.png',
@@ -142,7 +144,8 @@ class ProjectDetails {
       ]
     },
 
-    // wallet app
+    // -----------------------------------------WALLET APP----------------------------------------------------------------
+
     {
       "title": 'Wallet App',
       "fullTitle": 'Money Management App',
@@ -176,7 +179,7 @@ class ProjectDetails {
         'Including operations are Create ,Read ,Update ,Delete ,Search ,DeleteAll.'
       ],
       'device': 'Android/IOS',
-      'role': 'Brototype Intern',
+      'role': 'Prefessional Project',
       'type': 'Prefessional Project',
       'days': '18',
       'tools': 'Flutter,Dart,Vs code,Figma,EmailJs',
@@ -200,34 +203,38 @@ class ProjectDetails {
         'assets/project/wallet/image15.jpeg',
       ]
     },
+
+    // ----------------------------------WEATHER APP----------------------------------------------------------------
+
     {
       "title": 'Weather App',
       "fullTitle": 'Weather Application',
       "subtitle":
-          'Nexon Ev Booking App is designed to facilitate the booking of Nexon EV variants and test drives',
+          'Weather App is designed to provide real-time weather updates',
       "fullSubtitle":
-          'Nexon Ev Booking App is designed to facilitate the booking of Nexon EV variants and test drives. The app empowers users with convenient features, including locating charging stations, community chat for user interaction',
-      "mainSpec": ['Authentication', 'Transactions', "Category's", 'Feedback'],
+          "Weather App is designed to provide real-time weather updates, wind speed and temperature in each hour in that day",
+      "mainSpec": [
+        'Current Location\nTracking',
+        'Dynamic Weather',
+        "Hourly Weather",
+        'Daily Weather'
+      ],
       "specImages": [
-        'assets/project/nexon_ev/auth.png',
-        'assets/project/nexon_ev/booking.png',
-        'assets/project/nexon_ev/community.png',
         'assets/project/nexon_ev/location.png',
-        'assets/project/nexon_ev/payment.png'
+        'assets/project/weather/weather.png',
+        'assets/project/weather/hourly_w.png',
+        'assets/project/weather/daily.png',
       ],
       "features": [
-        'Developed using Flutter, Dart, Node.js with REST API.',
-        'Handles State Management with Provider under Domain drive disign(DDD)pattern.',
-        'Integrated payment service with Razorpay.',
-        'Built-in community chat functionality for smooth communication with Socket.io.',
-        'Map-based functionality integration to find charger stations with Map box.',
-        'Authentication features including login,signup,Continue with Google,Guest mode and forgot password functionality'
+        'Developed using Flutter, Dart, with REST API (DIO).',
+        'Handles State Management with Getx under MVC pattern',
+        'App offers Current , Hourly and Daily Wether with Dynamicly',
       ],
       'device': 'Android/IOS',
       'role': 'Brototype Intern',
       'type': 'Prefessional Project',
-      'days': '60',
-      'tools': 'Flutter,Dart,NodeJs,Vs code,Postman,Figma',
+      'days': '7',
+      'tools': 'Flutter,Dart,Weather Api, Vs code,Figma',
       'focusImage': 'assets/project/weather/focus_image.png',
       'applink': 'https://www.amazon.com/gp/product/B0CLKVWV3Q',
       "images": [
@@ -237,6 +244,26 @@ class ProjectDetails {
         'assets/project/weather/image4.jpeg',
         'assets/project/weather/image5.jpeg',
       ]
+    },
+
+    ///-------------------------------------------CHAT BOAT-----------------------------------------------------------------------
+
+    {
+      "title": 'Chat Boat',
+      "fullTitle": 'Chat Boat',
+      "subtitle": "",
+      "fullSubtitle": "",
+      "mainSpec": [],
+      "specImages": [],
+      "features": [],
+      'device': 'Android/IOS/Web',
+      'role': 'Prefessional Project',
+      'type': 'Prefessional Project',
+      'days': '40',
+      'tools': 'Flutter,Dart,Firebase,Vs code,Figma',
+      'focusImage': 'assets/project/weather/focus_image.png',
+      'applink': 'https://www.amazon.com/gp/product/B0CLKVWV3Q',
+      "images": []
     },
   ];
 }

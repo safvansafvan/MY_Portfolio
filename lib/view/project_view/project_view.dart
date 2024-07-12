@@ -19,38 +19,34 @@ class ProjectView extends StatelessWidget {
   Widget build(BuildContext context) {
     log(projectDetails.toString(), name: '------------------------>');
     return Scaffold(
-      body: ScrollConfiguration(
-        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-        child: SingleChildScrollView(
-          controller: context.scrollController,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 110),
-                child: FadeInRight(
-                    globalKey: GlobalKey(), child: const AppBarWidget()),
-              ),
-              FadeInRight(
-                  globalKey: GlobalKey(),
-                  child: ProjectDetailsHeaderWidget(
-                      projectDetails: projectDetails)),
-              FadeInRight(
-                  globalKey: GlobalKey(),
-                  child:
-                      TopProjectDetailsWidget(projectDetails: projectDetails)),
-              ProjectHighlightingFeatures(projectDetails: projectDetails),
-              ImageViewWidget(images: projectDetails['images']),
-              projectDetails['admin'] != null
-                  ? AdminWidget(projectDetails: projectDetails)
-                  : const SizedBox(),
-              const NextProjectWidget(),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 110),
-                child: FooterWidget(),
-              ),
-            ],
-          ),
+      body: SingleChildScrollView(
+        controller: context.scrollController,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 110),
+              child: FadeInRight(
+                  globalKey: GlobalKey(), child: const AppBarWidget()),
+            ),
+            FadeInRight(
+                globalKey: GlobalKey(),
+                child:
+                    ProjectDetailsHeaderWidget(projectDetails: projectDetails)),
+            FadeInRight(
+                globalKey: GlobalKey(),
+                child: TopProjectDetailsWidget(projectDetails: projectDetails)),
+            ProjectHighlightingFeatures(projectDetails: projectDetails),
+            ImageViewWidget(images: projectDetails['images']),
+            projectDetails['admin'] != null
+                ? AdminWidget(projectDetails: projectDetails)
+                : const SizedBox(),
+            const NextProjectWidget(),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 110),
+              child: FooterWidget(),
+            ),
+          ],
         ),
       ),
     );

@@ -27,7 +27,9 @@ class _ImageViewWidgetState extends State<ImageViewWidget> {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.only(),
+              padding: widget.images.length < 6
+                  ? const EdgeInsets.only(left: 100)
+                  : null,
               margin: const EdgeInsets.only(bottom: 20),
               height: 450,
               child: ListView.builder(

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,11 +51,12 @@ class FooterWidget extends StatelessWidget {
                   MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
-                        onTap: () async {
-                          await controller.redirectToWeb(ProjectURL.gmailURL);
-                        },
-                        child: Text('sajusajuptl@gmail.com',
-                            style: AppTheme.blueSmallText)),
+                      onTap: () async {
+                        await controller.redirectToWeb(ProjectURL.gmailURL);
+                      },
+                      child: Text('sajusajuptl@gmail.com',
+                          style: AppTheme.blueSmallText),
+                    ),
                   ),
                 ],
               ),
@@ -80,11 +79,12 @@ class FooterWidget extends StatelessWidget {
                       child: MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                            onTap: () async {
-                              await controller
-                                  .redirectToWeb(ProjectURL.resumeDriveURL);
-                            },
-                            child: Text('Resume', style: blueSmallText)),
+                          onTap: () async {
+                            await controller
+                                .redirectToWeb(ProjectURL.resumeDriveURL);
+                          },
+                          child: Text('Resume', style: blueSmallText),
+                        ),
                       ),
                     ),
                     MouseRegion(

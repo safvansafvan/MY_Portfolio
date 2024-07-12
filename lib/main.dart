@@ -35,11 +35,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      // home: ProjectView(
-      //   projectDetails: ProjectDetails.projectData[1],
-      // ),
+      home: ProjectView(
+        projectDetails: ProjectDetails.projectData[1],
+      ),
       // home: AboutScreen(),
-      home: HomeView(),
+      //home: HomeView(),
     );
   }
 }

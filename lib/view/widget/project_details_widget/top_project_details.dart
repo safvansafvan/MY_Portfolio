@@ -157,25 +157,6 @@ class TopProjectDetailsWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Role',
-                          style: titleStyle,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(projectDetails['role'],
-                              textAlign: TextAlign.center,
-                              style: subtitleStyle),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 90,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
                           'Support Device',
                           style: titleStyle,
                         ),
@@ -210,7 +191,40 @@ class TopProjectDetailsWidget extends StatelessWidget {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 90,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Get App',
+                          style: titleStyle,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: ElevatedButton(
+                            style: const ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.black87)),
+                            onPressed: () async {
+                              await controller.redirectToWeb(
+                                  Uri.parse(projectDetails['applink']));
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
+                              child: Text(
+                                'Get',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )

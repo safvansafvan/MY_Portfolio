@@ -41,15 +41,16 @@ class NextProjectWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 16),
                 child: ElevatedButton(
-                    onPressed: () {},
-                    style: AppTheme.elevatedButtonStyle,
-                    child: const Text(
-                      'Next',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                          color: Colors.white),
-                    )),
+                  onPressed: () {},
+                  style: AppTheme.elevatedButtonStyle,
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.white),
+                  ),
+                ),
               )
             ],
           )
