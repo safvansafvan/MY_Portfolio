@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
+import 'package:get/instance_manager.dart';
+import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/view/widget/app_bar.dart';
 import 'package:myportfolio/view/widget/footer_widget.dart';
 import 'package:myportfolio/view/widget/home_widget/header_widget.dart';
 import 'package:myportfolio/view/widget/home_widget/my_work.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView>
+    with SingleTickerProviderStateMixin {
+  final ctrl = Get.find<GlobalController>();
+  final List<bool> _visibleWidgets = [false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +27,47 @@ class HomeView extends StatelessWidget {
         child: ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
-            controller: context.scrollController,
+            controller: ctrl.homeScrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FadeInRight(
-                    globalKey: GlobalKey(), child: const AppBarWidget()),
-                FadeInRight(
-                    globalKey: GlobalKey(), child: const HeaderWidget()),
-                FadeInRight(
-                    globalKey: GlobalKey(), child: const MyWorkWidget()),
-                FadeInRight(globalKey: GlobalKey(), child: const FooterWidget())
+                _buildAnimatedWidget(0, const AppBarWidget()),
+                _buildAnimatedWidget(1, const HeaderWidget()),
+                _buildAnimatedWidget(2, const MyWorkWidget()),
+                _buildAnimatedWidget(
+                  3,
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 100),
+                    child: FooterWidget(),
+                  ),
+                ),
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAnimatedWidget(int index, Widget child) {
+    return VisibilityDetector(
+      key: Key('widget_$index'),
+      onVisibilityChanged: (visibilityInfo) {
+        if (visibilityInfo.visibleFraction > 0.1 && !_visibleWidgets[index]) {
+          setState(() {
+            _visibleWidgets[index] = true;
+          });
+        }
+      },
+      child: AnimatedOpacity(
+        opacity: _visibleWidgets[index] ? 1.0 : 0.0,
+        duration: const Duration(milliseconds: 1000),
+        curve: Curves.ease,
+        child: AnimatedSlide(
+          offset: _visibleWidgets[index] ? Offset.zero : const Offset(0.1, 0.1),
+          duration: const Duration(milliseconds: 1000),
+          curve: Curves.ease,
+          child: child,
         ),
       ),
     );

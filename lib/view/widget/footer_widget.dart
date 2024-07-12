@@ -21,7 +21,7 @@ class FooterWidget extends StatelessWidget {
         letterSpacing: 0.4);
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: const EdgeInsets.only(top: 200, bottom: 100),
+      padding: const EdgeInsets.only(top: 50, bottom: 100),
       child: CustomAnimated(
         animationController: controller.animationController,
         animation: controller.animation,
