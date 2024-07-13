@@ -11,7 +11,9 @@ class HeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 118, vertical: 60),
+      padding: EdgeInsets.symmetric(
+          horizontal: context.width < 948 ? 60 : 118,
+          vertical: context.width < 948 ? 30 : 60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -47,7 +49,6 @@ class HeaderWidget extends StatelessWidget {
                     TextSpan(
                       text: '  with a passion for crafting elegant and ',
                       style: TextStyle(
-                        fontSize: 35,
                         color: Colors.black38,
                       ),
                     ),

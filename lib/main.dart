@@ -3,8 +3,10 @@ import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/controller/global_controller.dart';
+import 'package:myportfolio/utils/project_details.dart';
 import 'package:myportfolio/view/about/about_screen.dart';
 import 'package:myportfolio/view/home/home.dart';
+import 'package:myportfolio/view/project_view/project_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       initialRoute: '/',
-      routes: {'/': (_) => const AboutScreen()},
+      routes: {'/': (_) => const HomeView()},
       debugShowCheckedModeBanner: false,
     );
   }

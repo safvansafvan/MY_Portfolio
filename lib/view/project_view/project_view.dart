@@ -46,10 +46,7 @@ class _ProjectViewState extends State<ProjectView>
           children: [
             _buildAnimatedWidget(
               0,
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 110),
-                child: AppBarWidget(isWorkButtonClick: true),
-              ),
+              const AppBarWidget(isWorkButtonClick: true),
             ),
             _buildAnimatedWidget(
                 1,
@@ -71,10 +68,7 @@ class _ProjectViewState extends State<ProjectView>
                 6, NextProjectWidget(projectDetails: widget.projectDetails)),
             _buildAnimatedWidget(
               7,
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 110),
-                child: FooterWidget(),
-              ),
+              const FooterWidget(),
             ),
           ],
         ),
