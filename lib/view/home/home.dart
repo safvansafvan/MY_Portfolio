@@ -33,10 +33,9 @@ class _HomeViewState extends State<HomeView>
             _buildAnimatedWidget(2, const MyWorkWidget()),
             _buildAnimatedWidget(
               3,
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 118)
-                    .copyWith(bottom: 100),
-                child: const FooterWidget(),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 100),
+                child: FooterWidget(),
               ),
             ),
             const MadeCard()

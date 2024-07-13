@@ -20,7 +20,8 @@ class FooterWidget extends StatelessWidget {
         letterSpacing: 0.4);
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: const EdgeInsets.only(top: 50, bottom: 100),
+      padding: EdgeInsets.symmetric(horizontal: context.width > 949 ? 100 : 60)
+          .copyWith(top: 50, bottom: 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,24 +36,45 @@ class FooterWidget extends StatelessWidget {
               style: AppTheme.smallText,
             ),
           ),
-          Row(
-            children: [
-              Text(
-                'Get in touch below or directly at  ',
-                style: AppTheme.smallText,
-              ),
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () async {
-                    await controller.redirectToWeb(ProjectURL.gmailURL);
-                  },
-                  child: Text('sajusajuptl@gmail.com',
-                      style: AppTheme.blueSmallText),
+          if (context.width < 800)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Get in touch below or directly at  ',
+                  style: AppTheme.smallText,
                 ),
-              ),
-            ],
-          ),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () async {
+                      await controller.redirectToWeb(ProjectURL.gmailURL);
+                    },
+                    child: Text('sajusajuptl@gmail.com',
+                        style: AppTheme.blueSmallText),
+                  ),
+                ),
+              ],
+            )
+          else
+            Row(
+              children: [
+                Text(
+                  'Get in touch below or directly at  ',
+                  style: AppTheme.smallText,
+                ),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () async {
+                      await controller.redirectToWeb(ProjectURL.gmailURL);
+                    },
+                    child: Text('sajusajuptl@gmail.com',
+                        style: AppTheme.blueSmallText),
+                  ),
+                ),
+              ],
+            ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 import 'package:myportfolio/view/widget/project_details_widget/scroll_image.dart';
 
@@ -14,7 +15,8 @@ class AdminWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 110),
+            padding: EdgeInsets.symmetric(
+                horizontal: context.width < 948 ? 40 : 110),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

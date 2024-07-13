@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 
@@ -10,7 +11,8 @@ class ProjectHighlightingFeatures extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 110, vertical: 40),
+      padding: EdgeInsets.symmetric(
+          horizontal: context.width < 948 ? 60 : 110, vertical: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,8 +26,9 @@ class ProjectHighlightingFeatures extends StatelessWidget {
             cacheExtent: 180,
             addSemanticIndexes: true,
             addAutomaticKeepAlives: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, childAspectRatio: 1.2),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: context.width < 948 ? 3 : 4,
+                childAspectRatio: 1.2),
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             itemCount: projectDetails['mainSpec'].length,
@@ -39,7 +42,8 @@ class ProjectHighlightingFeatures extends StatelessWidget {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            padding: EdgeInsets.symmetric(
+                vertical: 20, horizontal: context.width < 658 ? 10 : 20),
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: projectDetails['features'].length,
@@ -76,17 +80,25 @@ class ShowcasingFeatureCard extends StatelessWidget {
         border: Border.all(color: Colors.grey[200]!, width: 5),
       ),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: Image.asset(img, height: 80),
-          ),
+          context.width < 658
+              ? const SizedBox()
+              : Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Image.asset(
+                    img,
+                    height: context.height * 0.1,
+                    fit: BoxFit.cover,
+                  ),
+                ),
           Text(
             text,
             textAlign: TextAlign.center,
+            softWrap: true,
+            overflow: TextOverflow.ellipsis,
+            maxLines: context.width < 658 ? 2 : 1,
             style: TextStyle(
                 fontFamily: GoogleFonts.sora().fontFamily,
                 fontSize: 14,

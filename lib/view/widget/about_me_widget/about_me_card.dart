@@ -1,8 +1,10 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/theme/app_theme.dart';
-import 'package:myportfolio/utils/project_url.dart';
+import 'package:myportfolio/view/widget/about_me_widget/about_buttons.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class AboutMeCardWidget extends StatelessWidget {
   const AboutMeCardWidget({super.key});
@@ -10,10 +12,88 @@ class AboutMeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<GlobalController>();
+    log(context.width.toString());
 
+    return ResponsiveBuilder(builder: (context, size) {
+      if (size.deviceScreenType == DeviceScreenType.desktop) {
+        return WebWidget(controller: controller);
+      }
+      if (size.deviceScreenType == DeviceScreenType.tablet ||
+          size.deviceScreenType == DeviceScreenType.mobile) {
+        return const TabletWidget();
+      }
+      return const SizedBox();
+    });
+  }
+}
+
+class TabletWidget extends StatelessWidget {
+  const TabletWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.find<GlobalController>();
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 120, bottom: 40),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                'assets/images/my_img.jpg',
+                height: 500,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Text(
+              'About Me',
+              style: AppTheme.titleStyle,
+            ),
+          ),
+          AboutMeButtons(controller: controller),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 60),
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                Text(
+                  "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                  style: AppTheme.aboutCardText,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Text(
+                    "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
+                    style: AppTheme.aboutCardText,
+                  ),
+                ),
+                Text(
+                  "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                  style: AppTheme.aboutCardText,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class WebWidget extends StatelessWidget {
+  const WebWidget({super.key, required this.controller});
+
+  final GlobalController controller;
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       child: Padding(
-        padding: const EdgeInsets.only(top: 200),
+        padding: const EdgeInsets.symmetric(horizontal: 120).copyWith(top: 200),
         child: Stack(
           children: [
             Column(
@@ -25,100 +105,15 @@ class AboutMeCardWidget extends StatelessWidget {
                   children: [
                     const Spacer(),
                     Padding(
-                      padding: const EdgeInsets.only(left: 100),
+                      padding: EdgeInsets.only(
+                          left: context.width < 800 ? 100 : 200),
                       child: Text(
                         'About Me',
                         style: AppTheme.aboutLargeTitleStyle,
                       ),
                     ),
                     const Spacer(),
-                    Row(
-                      children: [
-                        MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            onTap: () async {
-                              await controller
-                                  .redirectToWeb(ProjectURL.linkedinURL);
-                            },
-                            child: CircleAvatar(
-                              radius: 35,
-                              backgroundColor: Colors.black87,
-                              child: Image.asset('assets/icon/linkedin.png',
-                                  height: 20, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            onTap: () async {
-                              await controller
-                                  .redirectToWeb(ProjectURL.gmailURL);
-                            },
-                            child: CircleAvatar(
-                              radius: 35,
-                              backgroundColor: Colors.black87,
-                              child: Image.asset('assets/icon/mail.png',
-                                  height: 20, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        GetBuilder<GlobalController>(builder: (controller) {
-                          return MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            onEnter: (event) {
-                              controller.resumeButtonState();
-                            },
-                            onExit: (event) => controller.resumeButtonState(),
-                            child: GestureDetector(
-                              onTap: () async {
-                                await controller
-                                    .redirectToWeb(ProjectURL.resumeDriveURL);
-                              },
-                              child: AnimatedContainer(
-                                height: 70,
-                                width: 150,
-                                duration: const Duration(milliseconds: 400),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.black87, width: 2),
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: controller.isResumeButtonHover
-                                        ? Colors.black87
-                                        : null),
-                                child: Center(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset('assets/icon/notes.png',
-                                          height: 20,
-                                          color: controller.isResumeButtonHover
-                                              ? Colors.white
-                                              : Colors.black),
-                                      const SizedBox(width: 5),
-                                      Text(
-                                        'Resume',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                            color:
-                                                controller.isResumeButtonHover
-                                                    ? Colors.white
-                                                    : Colors.black87,
-                                            letterSpacing: 0.4),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
-                      ],
-                    ),
+                    AboutMeButtons(controller: controller),
                   ],
                 ),
                 Container(
@@ -135,32 +130,52 @@ class AboutMeCardWidget extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 100),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 300),
-                                child: SizedBox(
-                                  width: 350,
-                                  child: Text(
-                                    "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
-                                    style: AppTheme.aboutCardText,
-                                  ),
+                          child: context.width < 1410
+                              ? Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 300),
+                                      child: Text(
+                                        "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                                        style: AppTheme.aboutCardText,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 300, top: 20),
+                                      child: Text(
+                                        "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
+                                        style: AppTheme.aboutCardText,
+                                      ),
+                                    )
+                                  ],
+                                )
+                              : Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 300),
+                                      child: SizedBox(
+                                        width: 350,
+                                        child: Text(
+                                          "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                                          style: AppTheme.aboutCardText,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 50),
+                                      child: SizedBox(
+                                        width: 350,
+                                        child: Text(
+                                          "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
+                                          style: AppTheme.aboutCardText,
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 50),
-                                child: SizedBox(
-                                  width: 350,
-                                  child: Text(
-                                    "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
-                                    style: AppTheme.aboutCardText,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20)

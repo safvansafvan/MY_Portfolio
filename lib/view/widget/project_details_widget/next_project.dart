@@ -12,8 +12,8 @@ class NextProjectWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 110,
+      padding: EdgeInsets.symmetric(
+        horizontal: context.width < 948 ? 40 : 110,
       ).copyWith(top: 120),
       child: Column(
         children: [

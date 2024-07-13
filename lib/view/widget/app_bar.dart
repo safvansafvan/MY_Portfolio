@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,9 +16,11 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log(context.width.toString());
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100).copyWith(top: 50),
+      padding: EdgeInsets.symmetric(horizontal: context.width < 1000 ? 50 : 120)
+          .copyWith(top: 50),
       child: AppBar(
         leadingWidth: 0,
         automaticallyImplyLeading: false,

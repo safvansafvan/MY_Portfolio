@@ -1,5 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/view/widget/about_me_widget/about_me_card.dart';
 import 'package:myportfolio/view/widget/about_me_widget/experience_card.dart';
@@ -21,25 +23,23 @@ class _AboutScreenState extends State<AboutScreen>
 
   @override
   Widget build(BuildContext context) {
+    log(context.width.toString());
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 130),
-        child: ScrollConfiguration(
-          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: SingleChildScrollView(
-            controller: ctrl.aboutScrollController,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildAnimatedWidget(
-                  0,
-                  const AppBarWidget(isWorkButtonClick: true),
-                ),
-                _buildAnimatedWidget(1, const AboutMeCardWidget()),
-                _buildAnimatedWidget(2, const ExperienceCardWidget()),
-                _buildAnimatedWidget(3, const FooterWidget())
-              ],
-            ),
+      body: ScrollConfiguration(
+        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        child: SingleChildScrollView(
+          controller: ctrl.aboutScrollController,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildAnimatedWidget(
+                0,
+                const AppBarWidget(isWorkButtonClick: true),
+              ),
+              _buildAnimatedWidget(1, const AboutMeCardWidget()),
+              _buildAnimatedWidget(2, const ExperienceCardWidget()),
+              _buildAnimatedWidget(3, const FooterWidget())
+            ],
           ),
         ),
       ),
