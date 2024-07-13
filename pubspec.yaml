@@ -11,12 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   get: ^4.6.6
-  flutter_animate_on_scroll: ^0.0.2
   url_launcher: ^6.3.0
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +28,12 @@ flutter:
   assets:
     - assets/gif/
     - assets/icon/
+    - assets/project/nexon_ev/
+    - assets/project/nexon_admin/
+    - assets/project/weather/
+    - assets/project/wallet/
+    - assets/project/music/
+    - assets/images/
 
   # fonts:
   #   - family: Schyler
