@@ -19,7 +19,7 @@ class AppBarWidget extends StatelessWidget {
     log(context.width.toString());
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.width < 1000 ? 50 : 120)
+      padding: EdgeInsets.symmetric(horizontal: context.width < 1000 ? 50 : 100)
           .copyWith(top: 50),
       child: AppBar(
         leadingWidth: 0,
