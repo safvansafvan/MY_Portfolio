@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ImageViewWidget extends StatefulWidget {
   const ImageViewWidget({super.key, required this.images});
@@ -17,7 +18,7 @@ class _ImageViewWidgetState extends State<ImageViewWidget> {
       children: [
         Container(
           padding: widget.images.length < 6
-              ? const EdgeInsets.only(left: 100)
+              ? EdgeInsets.only(left: context.width < 1263 ? 0 : 100)
               : null,
           margin: const EdgeInsets.only(bottom: 20),
           height: 450,
@@ -40,7 +41,7 @@ class _ImageViewWidgetState extends State<ImageViewWidget> {
             },
           ),
         ),
-        widget.images.length > 7
+        widget.images.length > 7 || context.width < 1200
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
