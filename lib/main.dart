@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(GlobalController());
     return GetMaterialApp(
-      title: 'Portfolio',
+      title: 'Muhammed Safvan',
       theme: ThemeData(
         fontFamily: GoogleFonts.sora().fontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
