@@ -84,7 +84,11 @@ class FooterWidget extends StatelessWidget {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      controller.homeScrollController.animateTo(0.0,
+                          duration: const Duration(milliseconds: 1000),
+                          curve: Curves.linearToEaseOut);
+                    },
                     child: Text('Home',
                         textAlign: TextAlign.start, style: blueSmallText),
                   ),

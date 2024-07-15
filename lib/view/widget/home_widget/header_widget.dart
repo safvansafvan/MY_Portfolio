@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/utils/project_url.dart';
+import 'package:myportfolio/view/widget/on_hover.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
@@ -113,11 +114,13 @@ class HeaderWidget extends StatelessWidget {
                   onTap: () async {
                     await controller.redirectToWeb(ProjectURL.linkedinURL);
                   },
-                  child: CircleAvatar(
-                    radius: 35,
-                    backgroundColor: Colors.black87,
-                    child: Image.asset('assets/icon/linkedin.png',
-                        height: 20, color: Colors.white),
+                  child: OnHoverAnimation(
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.black87,
+                      child: Image.asset('assets/icon/linkedin.png',
+                          height: 20, color: Colors.white),
+                    ),
                   ),
                 ),
               ),
@@ -128,11 +131,13 @@ class HeaderWidget extends StatelessWidget {
                   onTap: () async {
                     await controller.redirectToWeb(ProjectURL.gmailURL);
                   },
-                  child: CircleAvatar(
-                    radius: 35,
-                    backgroundColor: Colors.black87,
-                    child: Image.asset('assets/icon/mail.png',
-                        height: 20, color: Colors.white),
+                  child: OnHoverAnimation(
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.black87,
+                      child: Image.asset('assets/icon/mail.png',
+                          height: 20, color: Colors.white),
+                    ),
                   ),
                 ),
               )
