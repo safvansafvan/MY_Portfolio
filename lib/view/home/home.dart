@@ -35,7 +35,7 @@ class _HomeViewState extends State<HomeView>
               3,
               const Padding(
                 padding: EdgeInsets.only(bottom: 100),
-                child: FooterWidget(),
+                child: FooterWidget(isHome: true),
               ),
             ),
             const MadeCard()

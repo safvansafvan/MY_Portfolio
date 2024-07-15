@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myportfolio/view/widget/on_hover.dart';
 import '../../../controller/global_controller.dart';
 
 class TopProjectDetailsWidget extends StatelessWidget {
@@ -168,18 +169,20 @@ class GetApp extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10),
-            child: ElevatedButton(
-              style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.black87)),
-              onPressed: () async {
-                await controller
-                    .redirectToWeb(Uri.parse(projectDetails['applink']));
-              },
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Text(
-                  'Get',
-                  style: TextStyle(color: Colors.white),
+            child: OnHoverAnimation(
+              child: ElevatedButton(
+                style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.black87)),
+                onPressed: () async {
+                  await controller
+                      .redirectToWeb(Uri.parse(projectDetails['applink']));
+                },
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  child: Text(
+                    'Get',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),
@@ -367,15 +370,17 @@ class Prototype extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10),
-            child: ElevatedButton(
-              style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.black87)),
-              onPressed: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Text(
-                  'Figma',
-                  style: TextStyle(color: Colors.white),
+            child: OnHoverAnimation(
+              child: ElevatedButton(
+                style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.black87)),
+                onPressed: () {},
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  child: Text(
+                    'Figma',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),

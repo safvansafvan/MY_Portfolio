@@ -39,7 +39,8 @@ class ProjectDetails {
       'focusImage': 'assets/project/nexon_ev/focus_image.png',
       'previous': '',
       'nextProject': 'Music Player',
-      'applink': 'https://www.amazon.com/gp/product/B0CL4G5Y2X',
+      'applink':
+          'https://drive.google.com/file/d/1B6dXz2-gQnyXSEMKLVbQdPzF0xbWrbWQ/view?usp=sharing',
       "images": [
         'assets/project/nexon_ev/s1.png',
         'assets/project/nexon_ev/1.png',

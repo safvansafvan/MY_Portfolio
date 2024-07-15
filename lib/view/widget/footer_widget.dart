@@ -6,7 +6,9 @@ import 'package:myportfolio/theme/app_theme.dart';
 import 'package:myportfolio/utils/project_url.dart';
 
 class FooterWidget extends StatelessWidget {
-  const FooterWidget({super.key});
+  const FooterWidget({super.key, this.isHome});
+
+  final bool? isHome;
 
   @override
   Widget build(BuildContext context) {
@@ -85,9 +87,16 @@ class FooterWidget extends StatelessWidget {
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                     onTap: () {
-                      controller.homeScrollController.animateTo(0.0,
-                          duration: const Duration(milliseconds: 1000),
-                          curve: Curves.linearToEaseOut);
+                      if (isHome == true) {
+                        controller.homeScrollController.animateTo(0.0,
+                            duration: const Duration(milliseconds: 1000),
+                            curve: Curves.linearToEaseOut);
+                      } else {
+                        Navigator.pop(context);
+                        controller.homeScrollController.animateTo(0.0,
+                            duration: const Duration(milliseconds: 1000),
+                            curve: Curves.linearToEaseOut);
+                      }
                     },
                     child: Text('Home',
                         textAlign: TextAlign.start, style: blueSmallText),

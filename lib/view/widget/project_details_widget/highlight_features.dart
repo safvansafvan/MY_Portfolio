@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/theme/app_theme.dart';
+import 'package:myportfolio/view/widget/on_hover.dart';
 
 class ProjectHighlightingFeatures extends StatelessWidget {
   const ProjectHighlightingFeatures({super.key, required this.projectDetails});
@@ -27,7 +28,11 @@ class ProjectHighlightingFeatures extends StatelessWidget {
             addSemanticIndexes: true,
             addAutomaticKeepAlives: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: context.width < 948 ? 3 : 4,
+                crossAxisCount: context.width < 948
+                    ? context.width < 600
+                        ? 1
+                        : 3
+                    : 4,
                 childAspectRatio: 1.2),
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
@@ -73,41 +78,41 @@ class ShowcasingFeatureCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: Colors.grey[200]!, width: 5),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          context.width < 658
-              ? const SizedBox()
-              : Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Image.asset(
-                    img,
-                    height: context.height * 0.1,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            softWrap: true,
-            overflow: TextOverflow.ellipsis,
-            maxLines: context.width < 658 ? 2 : 1,
-            style: TextStyle(
-                fontFamily: GoogleFonts.sora().fontFamily,
-                fontSize: 14,
-                height: 1.7,
-                fontWeight: FontWeight.w500,
-                color: Colors.black54,
-                letterSpacing: 0.6),
-          )
-        ],
+    return OnHoverAnimation(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: Colors.grey[200]!, width: 5),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Image.asset(
+                img,
+                height: context.height * 0.1,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              overflow: TextOverflow.ellipsis,
+              maxLines: context.width < 658 ? 2 : 1,
+              style: TextStyle(
+                  fontFamily: GoogleFonts.sora().fontFamily,
+                  fontSize: 14,
+                  height: 1.7,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black54,
+                  letterSpacing: 0.6),
+            )
+          ],
+        ),
       ),
     );
   }
