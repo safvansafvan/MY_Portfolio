@@ -8,6 +8,7 @@ import 'package:myportfolio/theme/app_theme.dart';
 import 'package:myportfolio/utils/project_url.dart';
 import 'package:myportfolio/view/about/about_screen.dart';
 import 'package:myportfolio/view/home/home.dart';
+import 'package:myportfolio/view/widget/on_hover.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key, this.isWorkButtonClick});
@@ -40,56 +41,62 @@ class AppBarWidget extends StatelessWidget {
           ),
         ),
         actions: [
-          TextButton(
-            onPressed: () {
-              Get.to(
-                () => const AboutScreen(),
-                curve: Curves.easeInOut,
-                transition: Transition.fade,
-                duration: const Duration(milliseconds: 500),
-              );
-            },
-            style: AppTheme.textButtonStyle,
-            child: Text(
-              'about',
-              style: TextStyle(
-                fontFamily: GoogleFonts.sora().fontFamily,
+          OnHoverAnimation(
+            child: TextButton(
+              onPressed: () {
+                Get.to(
+                  () => const AboutScreen(),
+                  curve: Curves.easeInOut,
+                  transition: Transition.fade,
+                  duration: const Duration(milliseconds: 500),
+                );
+              },
+              style: AppTheme.textButtonStyle,
+              child: Text(
+                'about',
+                style: TextStyle(
+                  fontFamily: GoogleFonts.sora().fontFamily,
+                ),
               ),
             ),
           ),
-          TextButton(
-            onPressed: () {
-              if (isWorkButtonClick == true) {
-                Navigator.pop(context);
+          OnHoverAnimation(
+            child: TextButton(
+              onPressed: () {
+                if (isWorkButtonClick == true) {
+                  Navigator.pop(context);
 
-                controller.homeScrollController.animateTo(
-                    controller.homeScrollController.offset + 530,
-                    duration: const Duration(milliseconds: 1000),
-                    curve: Curves.linearToEaseOut);
-              } else {
-                controller.homeScrollController.animateTo(
-                    controller.homeScrollController.offset + 530,
-                    duration: const Duration(milliseconds: 1000),
-                    curve: Curves.linearToEaseOut);
-              }
-            },
-            style: AppTheme.textButtonStyle,
-            child: Text(
-              'work',
-              style: TextStyle(
-                fontFamily: GoogleFonts.sora().fontFamily,
+                  controller.homeScrollController.animateTo(
+                      controller.homeScrollController.offset + 530,
+                      duration: const Duration(milliseconds: 1000),
+                      curve: Curves.linearToEaseOut);
+                } else {
+                  controller.homeScrollController.animateTo(
+                      controller.homeScrollController.offset + 530,
+                      duration: const Duration(milliseconds: 1000),
+                      curve: Curves.linearToEaseOut);
+                }
+              },
+              style: AppTheme.textButtonStyle,
+              child: Text(
+                'work',
+                style: TextStyle(
+                  fontFamily: GoogleFonts.sora().fontFamily,
+                ),
               ),
             ),
           ),
-          TextButton(
-            onPressed: () {
-              controller.redirectToWeb(ProjectURL.resumeDriveURL);
-            },
-            style: AppTheme.textButtonStyle,
-            child: Text(
-              'resume',
-              style: TextStyle(
-                fontFamily: GoogleFonts.sora().fontFamily,
+          OnHoverAnimation(
+            child: TextButton(
+              onPressed: () {
+                controller.redirectToWeb(ProjectURL.resumeDriveURL);
+              },
+              style: AppTheme.textButtonStyle,
+              child: Text(
+                'resume',
+                style: TextStyle(
+                  fontFamily: GoogleFonts.sora().fontFamily,
+                ),
               ),
             ),
           )
