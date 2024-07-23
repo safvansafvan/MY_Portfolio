@@ -11,31 +11,41 @@ import 'package:myportfolio/view/home/home.dart';
 import 'package:myportfolio/view/widget/on_hover.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({super.key, this.isWorkButtonClick});
+  const AppBarWidget({super.key, this.isWorkButtonClick, this.isHome});
 
   final bool? isWorkButtonClick;
+  final bool? isHome;
 
   @override
   Widget build(BuildContext context) {
     log(context.width.toString());
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.width < 1000 ? 50 : 100)
+      padding: EdgeInsets.symmetric(
+              horizontal: context.width < 1000
+                  ? context.width < 500
+                      ? 0
+                      : 50
+                  : 100)
           .copyWith(top: 50),
       child: AppBar(
         leadingWidth: 0,
         automaticallyImplyLeading: false,
         surfaceTintColor: Colors.transparent,
+        forceMaterialTransparency: true,
         title: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
             onTap: () {
-              Get.offAll(
-                () => const HomeView(),
-                curve: Curves.easeInOut,
-                transition: Transition.fade,
-                duration: const Duration(milliseconds: 500),
-              );
+              if (isHome == true) {
+              } else {
+                Get.offAll(
+                  () => const HomeView(),
+                  curve: Curves.easeInOut,
+                  transition: Transition.fade,
+                  duration: const Duration(milliseconds: 500),
+                );
+              }
             },
             child: const Text('Muhammed Safvan'),
           ),

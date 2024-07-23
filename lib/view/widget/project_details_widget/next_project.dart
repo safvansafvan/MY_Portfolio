@@ -13,23 +13,36 @@ class NextProjectWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: context.width < 948 ? 40 : 110,
+        horizontal: context.width < 948
+            ? context.width < 500
+                ? 20
+                : 40
+            : 110,
       ).copyWith(top: 120),
       child: Column(
         children: [
+          context.width < 500
+              ? const Text(
+                  'Other Project',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                )
+              : const SizedBox(),
           const Divider(
             color: Colors.black54,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(right: 16),
-                child: Text(
-                  'Other Project',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-                ),
-              ),
+              context.width > 500
+                  ? const Padding(
+                      padding: EdgeInsets.only(right: 16),
+                      child: Text(
+                        'Other Project',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 14),
+                      ),
+                    )
+                  : const SizedBox(),
               projectDetails['previous'] == ''
                   ? const SizedBox()
                   : Padding(

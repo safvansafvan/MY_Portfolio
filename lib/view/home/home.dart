@@ -28,7 +28,7 @@ class _HomeViewState extends State<HomeView>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildAnimatedWidget(0, const AppBarWidget()),
+            _buildAnimatedWidget(0, const AppBarWidget(isHome: true)),
             _buildAnimatedWidget(1, const HeaderWidget()),
             _buildAnimatedWidget(2, const MyWorkWidget()),
             _buildAnimatedWidget(

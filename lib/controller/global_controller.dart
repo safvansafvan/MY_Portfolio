@@ -4,9 +4,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 class GlobalController extends GetxController
     with GetSingleTickerProviderStateMixin {
-  final ScrollController homeScrollController = ScrollController();
-  final ScrollController aboutScrollController = ScrollController();
-  ScrollController? projectScrollController = ScrollController();
+  final ScrollController homeScrollController =
+      ScrollController(initialScrollOffset: 20);
+  final ScrollController aboutScrollController =
+      ScrollController(initialScrollOffset: 20);
+  ScrollController? projectScrollController =
+      ScrollController(initialScrollOffset: 20);
 
   bool isResumeButtonHover = false;
 

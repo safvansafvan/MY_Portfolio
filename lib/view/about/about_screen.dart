@@ -33,9 +33,7 @@ class _AboutScreenState extends State<AboutScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildAnimatedWidget(
-                0,
-                const AppBarWidget(isWorkButtonClick: true),
-              ),
+                  0, const AppBarWidget(isWorkButtonClick: true)),
               _buildAnimatedWidget(1, const AboutMeCardWidget()),
               _buildAnimatedWidget(2, const ExperienceCardWidget()),
               _buildAnimatedWidget(3, const SkillWidget()),

@@ -13,7 +13,12 @@ class ProjectHighlightingFeatures extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: context.width < 948 ? 60 : 110, vertical: 40),
+          horizontal: context.width < 948
+              ? context.width < 500
+                  ? 20
+                  : 60
+              : 110,
+          vertical: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,6 +29,7 @@ class ProjectHighlightingFeatures extends StatelessWidget {
                 style: AppTheme.subtitleStyle),
           ),
           GridView.builder(
+            physics: const NeverScrollableScrollPhysics(),
             cacheExtent: 180,
             addSemanticIndexes: true,
             addAutomaticKeepAlives: true,
@@ -50,6 +56,7 @@ class ProjectHighlightingFeatures extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 vertical: 20, horizontal: context.width < 658 ? 10 : 20),
             child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: projectDetails['features'].length,
               itemBuilder: (context, index) {

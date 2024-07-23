@@ -78,7 +78,12 @@ class TopProjectDetailsWidget extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: context.width < 1119 ? 60 : 110, vertical: 20),
+              horizontal: context.width < 1119
+                  ? context.width < 500
+                      ? 20
+                      : 60
+                  : 110,
+              vertical: 20),
           child: context.width < 948
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,7 +177,7 @@ class GetApp extends StatelessWidget {
             child: OnHoverAnimation(
               child: ElevatedButton(
                 style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.black87)),
+                    backgroundColor: WidgetStatePropertyAll(Colors.black87)),
                 onPressed: () async {
                   await controller
                       .redirectToWeb(Uri.parse(projectDetails['applink']));

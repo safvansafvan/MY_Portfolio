@@ -13,7 +13,11 @@ class SkillWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
           vertical: context.width < 948 ? 20 : 40,
-          horizontal: context.width < 948 ? 40 : 100),
+          horizontal: context.width < 948
+              ? context.width < 500
+                  ? 20
+                  : 40
+              : 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

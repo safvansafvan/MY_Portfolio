@@ -13,7 +13,11 @@ class HeaderWidget extends StatelessWidget {
     final controller = Get.find<GlobalController>();
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: context.width < 948 ? 60 : 118,
+          horizontal: context.width < 948
+              ? context.width < 500
+                  ? 20
+                  : 60
+              : 118,
           vertical: context.width < 948 ? 30 : 60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

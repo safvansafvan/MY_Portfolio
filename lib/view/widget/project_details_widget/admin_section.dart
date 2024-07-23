@@ -16,7 +16,11 @@ class AdminWidget extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: context.width < 948 ? 40 : 110),
+                horizontal: context.width < 948
+                    ? context.width < 500
+                        ? 20
+                        : 40
+                    : 110),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -33,6 +37,7 @@ class AdminWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: projectDetails['admin']['features'].length,
                     itemBuilder: (context, index) {
