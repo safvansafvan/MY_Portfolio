@@ -17,7 +17,12 @@ class ProjectDetailsHeaderWidget extends StatelessWidget {
         color: Colors.grey[500],
         letterSpacing: 0.6);
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.width < 949 ? 60 : 130)
+      padding: EdgeInsets.symmetric(
+              horizontal: context.width < 949
+                  ? context.width < 500
+                      ? 20
+                      : 60
+                  : 130)
           .copyWith(top: 130),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -22,7 +22,12 @@ class FooterWidget extends StatelessWidget {
         letterSpacing: 0.4);
     final controller = Get.find<GlobalController>();
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.width > 949 ? 100 : 60)
+      padding: EdgeInsets.symmetric(
+              horizontal: context.width > 949
+                  ? 100
+                  : context.width < 500
+                      ? 20
+                      : 60)
           .copyWith(top: 50, bottom: 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

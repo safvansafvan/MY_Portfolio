@@ -56,7 +56,8 @@ class TabletWidget extends StatelessWidget {
           ),
           AboutMeButtons(controller: controller),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
+            padding:
+                EdgeInsets.symmetric(horizontal: context.width < 500 ? 20 : 60),
             child: Column(
               children: [
                 const SizedBox(height: 20),

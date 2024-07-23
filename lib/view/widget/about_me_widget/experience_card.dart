@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -59,7 +60,8 @@ class ExperienceMobileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 40),
+      padding: EdgeInsets.symmetric(
+          horizontal: context.width < 500 ? 20 : 60, vertical: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

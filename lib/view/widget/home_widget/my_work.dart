@@ -34,7 +34,8 @@ class MyWorkTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+      padding: EdgeInsets.symmetric(
+          horizontal: context.width < 500 ? 20 : 60, vertical: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
