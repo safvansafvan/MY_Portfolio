@@ -32,7 +32,7 @@ class _ImageViewWidgetState extends State<ImageViewWidget> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    width: 200,
+                    width: 210,
                     widget.images[index],
                     fit: BoxFit.cover,
                   ),

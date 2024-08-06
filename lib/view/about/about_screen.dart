@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:myportfolio/controller/global_controller.dart';
 import 'package:myportfolio/view/widget/about_me_widget/about_me_card.dart';
 import 'package:myportfolio/view/widget/about_me_widget/experience_card.dart';
-import 'package:myportfolio/view/widget/about_me_widget/skill_widget.dart';
 import 'package:myportfolio/view/widget/app_bar.dart';
 import 'package:myportfolio/view/widget/footer_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -36,7 +35,7 @@ class _AboutScreenState extends State<AboutScreen>
                   0, const AppBarWidget(isWorkButtonClick: true)),
               _buildAnimatedWidget(1, const AboutMeCardWidget()),
               _buildAnimatedWidget(2, const ExperienceCardWidget()),
-              _buildAnimatedWidget(3, const SkillWidget()),
+              // _buildAnimatedWidget(3, const SkillWidget()),
               _buildAnimatedWidget(4, const FooterWidget())
             ],
           ),

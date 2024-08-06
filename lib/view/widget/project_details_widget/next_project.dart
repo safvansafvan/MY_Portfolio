@@ -48,9 +48,7 @@ class NextProjectWidget extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.only(right: 16),
                       child: ElevatedButton(
-                        onPressed: () {
-                          moveToPreviousProject();
-                        },
+                        onPressed: moveToPreviousProject,
                         style: AppTheme.elevatedButtonStyle,
                         child: Text(
                           projectDetails['previous'],
@@ -66,9 +64,7 @@ class NextProjectWidget extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.only(right: 16),
                       child: ElevatedButton(
-                        onPressed: () {
-                          moveToNextProject();
-                        },
+                        onPressed: moveToNextProject,
                         style: AppTheme.elevatedButtonStyle,
                         child: Text(
                           projectDetails['nextProject'],
@@ -86,53 +82,67 @@ class NextProjectWidget extends StatelessWidget {
     );
   }
 
-  void moveToNextProject() {
+  Future<void> moveToNextProject() async {
     if (projectDetails['title'] == 'Nexon Ev') {
-      Get.offAll(
+      return await Get.offAll(
         () => ProjectView(projectDetails: ProjectDetails.projectData[1]),
         curve: Curves.easeInOut,
         transition: Transition.rightToLeft,
         duration: const Duration(milliseconds: 500),
       );
     } else if (projectDetails['title'] == 'Music Player') {
-      Get.offAll(
+      return await Get.offAll(
         () => ProjectView(projectDetails: ProjectDetails.projectData[2]),
         curve: Curves.easeInOut,
         transition: Transition.rightToLeft,
         duration: const Duration(milliseconds: 500),
       );
     } else if (projectDetails['title'] == 'Wallet App') {
-      Get.offAll(
+      return await Get.offAll(
         () => ProjectView(projectDetails: ProjectDetails.projectData[3]),
         curve: Curves.easeInOut,
         transition: Transition.rightToLeft,
         duration: const Duration(milliseconds: 500),
       );
-    } else {}
+    } else if (projectDetails['title'] == 'Genie Boat') {
+      return await Get.offAll(
+        () => ProjectView(projectDetails: ProjectDetails.projectData[4]),
+        curve: Curves.easeInOut,
+        transition: Transition.rightToLeft,
+        duration: const Duration(milliseconds: 500),
+      );
+    }
   }
 
-  void moveToPreviousProject() {
+  Future<void> moveToPreviousProject() async {
     if (projectDetails['title'] == 'Music Player') {
-      Get.offAll(
+      return await Get.offAll(
         () => ProjectView(projectDetails: ProjectDetails.projectData[0]),
         curve: Curves.easeInOut,
         transition: Transition.rightToLeft,
         duration: const Duration(milliseconds: 500),
       );
     } else if (projectDetails['title'] == 'Wallet App') {
-      Get.offAll(
+      return await Get.offAll(
         () => ProjectView(projectDetails: ProjectDetails.projectData[1]),
         curve: Curves.easeInOut,
         transition: Transition.rightToLeft,
         duration: const Duration(milliseconds: 500),
       );
-    } else if (projectDetails['title'] == 'Weather App') {
-      Get.offAll(
+    } else if (projectDetails['title'] == 'Genie Boat') {
+      return await Get.offAll(
         () => ProjectView(projectDetails: ProjectDetails.projectData[2]),
         curve: Curves.easeInOut,
         transition: Transition.rightToLeft,
         duration: const Duration(milliseconds: 500),
       );
-    } else {}
+    } else if (projectDetails['title'] == 'Weather App') {
+      return await Get.offAll(
+        () => ProjectView(projectDetails: ProjectDetails.projectData[3]),
+        curve: Curves.easeInOut,
+        transition: Transition.rightToLeft,
+        duration: const Duration(milliseconds: 500),
+      );
+    }
   }
 }
