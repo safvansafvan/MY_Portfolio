@@ -88,7 +88,13 @@ class TopProjectDetailsWidget extends StatelessWidget {
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Prototype(titleStyle: titleStyle),
+                    if (projectDetails['webUrl'] != null)
+                      GetWeb(
+                          titleStyle: titleStyle,
+                          controller: controller,
+                          projectDetails: projectDetails)
+                    else
+                      Prototype(titleStyle: titleStyle),
                     Role(
                         titleStyle: titleStyle,
                         projectDetails: projectDetails,
@@ -115,7 +121,13 @@ class TopProjectDetailsWidget extends StatelessWidget {
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Prototype(titleStyle: titleStyle),
+                    if (projectDetails['webUrl'] != null)
+                      GetWeb(
+                          titleStyle: titleStyle,
+                          controller: controller,
+                          projectDetails: projectDetails)
+                    else
+                      Prototype(titleStyle: titleStyle),
                     Role(
                         titleStyle: titleStyle,
                         projectDetails: projectDetails,
@@ -145,6 +157,58 @@ class TopProjectDetailsWidget extends StatelessWidget {
 }
 
 ///-------------------------------------------------------Widgets----------------------------------------------------------
+
+class GetWeb extends StatelessWidget {
+  const GetWeb({
+    super.key,
+    required this.titleStyle,
+    required this.controller,
+    required this.projectDetails,
+  });
+
+  final TextStyle titleStyle;
+  final GlobalController controller;
+  final Map<String, dynamic> projectDetails;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 90,
+      child: Column(
+        crossAxisAlignment: context.width < 948
+            ? CrossAxisAlignment.start
+            : CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Launch Web',
+            style: titleStyle,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: OnHoverAnimation(
+              child: ElevatedButton(
+                style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Colors.black87)),
+                onPressed: () async {
+                  await controller
+                      .redirectToWeb(Uri.parse(projectDetails['webUrl']));
+                },
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  child: Text(
+                    'Launch',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
 
 class GetApp extends StatelessWidget {
   const GetApp({

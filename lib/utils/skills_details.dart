@@ -48,7 +48,7 @@ class Skills {
   static List<Map<String, dynamic>> tools = [
     {
       'title': 'GitHub',
-      'icon': 'assets/logo/git_logo.png',
+      'icon': 'assets/icon/github.png',
       'color': Colors.grey[300]
     },
     {
@@ -86,7 +86,7 @@ class Skills {
   static List<Map<String, dynamic>> platfoms = [
     {
       'title': 'Windows OS',
-      'icon': 'assets/logo/windows_logo.webp',
+      'icon': 'assets/logo/windows.webp',
       'color': Colors.blue[300]
     },
     {

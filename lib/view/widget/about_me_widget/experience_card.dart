@@ -115,6 +115,14 @@ class ExperienceMobileWidget extends StatelessWidget {
                           style: subtitleStyle,
                         ),
                       ),
+                      Text('Credr Royal', style: titleStyle),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        child: Text(
+                          "We developed the CredR Royal application using Flutter, integrating robust features like authentication, bidding, vehicle search, orders, and a wallet with payment options. Employing GetX for state management ensured smooth and efficient app performance, while implementing secure authentication and payment gateways guaranteed user safety. This comprehensive approach resulted in a seamless and user-friendly experience for booking premium bikes.",
+                          style: subtitleStyle,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -146,7 +154,7 @@ class ExperienceMobileWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Flutter Developer Intern', style: titleStyle),
+                      Text('Flutter Developer Trainee', style: titleStyle),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 14),
                         child: Text(
@@ -283,7 +291,7 @@ class ExperienceCardTwo extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Flutter Developer Intern', style: titleStyle),
+                    Text('Flutter Developer Trainee', style: titleStyle),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       child: Text(
@@ -372,6 +380,14 @@ class ExperienceCardOne extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       child: Text(
                         "I developed the auto-scheduling dashboard application using Flutter web, employing GetX for state management, stomp_dart_client for real-time communication, and Google Maps API for location services. This comprehensive approach ensured a robust and user-friendly application that met our clients' needs effectively.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+                    Text('Credr Royal', style: titleStyle),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      child: Text(
+                        "We developed the CredR Royal application using Flutter, integrating robust features like authentication, bidding, vehicle search, orders, and a wallet with payment options. Employing GetX for state management ensured smooth and efficient app performance, while implementing secure authentication and payment gateways guaranteed user safety. This comprehensive approach resulted in a seamless and user-friendly experience for booking premium bikes.",
                         style: subtitleStyle,
                       ),
                     ),

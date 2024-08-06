@@ -51,8 +51,16 @@ class MyWorkTabView extends StatelessWidget {
           WalletAppCard(data: data),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30),
+            child: GenieBoatCard(data: data),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30),
             child: WeatherAppCard(data: data),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30),
+            child: ChatAppCard(data: data),
+          )
         ],
       ),
     );
@@ -97,15 +105,133 @@ class MyWorkWebWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 100),
-          WeatherAppCard(data: data),
+          Padding(
+            padding: const EdgeInsets.only(top: 60),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GenieBoatCard(data: data),
+                WeatherAppCard(data: data),
+                ChatAppCard(data: data)
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-class WeatherAppCard extends StatelessWidget {
-  const WeatherAppCard({
+////----------------------------------------------WIDGETS------------------------------------------------------------
+class ChatAppCard extends StatelessWidget {
+  const ChatAppCard({
+    super.key,
+    required this.data,
+  });
+
+  final List<Map<String, dynamic>> data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 670,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(data[5]['title'], style: AppTheme.titleStyle),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: SizedBox(
+              width: 250,
+              child: Text(data[5]['subtitle'], style: AppTheme.subtitleStyle),
+            ),
+          ),
+          Container(
+            constraints: const BoxConstraints(
+                maxHeight: 320, maxWidth: 250, minHeight: 100, minWidth: 100),
+            margin: const EdgeInsets.only(top: 25),
+            decoration: BoxDecoration(
+              image: const DecorationImage(
+                  alignment: Alignment.bottomCenter,
+                  image: AssetImage('assets/project/chatify/2.png')),
+              color: const Color(0xff018369).withOpacity(.2),
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+          const Spacer(),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black45, width: 2),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            height: 60,
+            width: 150,
+            child: const Center(
+              child: Text(
+                'Progressing....',
+                style: TextStyle(
+                    letterSpacing: 0.4,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black87),
+              ),
+            ),
+          )
+          // GetBuilder<GlobalController>(builder: (controller) {
+          //   return Padding(
+          //     padding: const EdgeInsets.only(top: 40),
+          //     child: MouseRegion(
+          //       onEnter: (_) => controller.walletButtonState(true),
+          //       onExit: (_) => controller.walletButtonState(false),
+          //       cursor: SystemMouseCursors.click,
+          //       child: GestureDetector(
+          //         onTap: () => Get.to(
+          //           () => ProjectView(projectDetails: data[5]),
+          //           curve: Curves.easeInOut,
+          //           transition: Transition.fade,
+          //           duration: const Duration(milliseconds: 500),
+          //         ),
+          //         child: AnimatedContainer(
+          //           height: 60,
+          //           width: 150,
+          //           duration: const Duration(milliseconds: 400),
+          //           decoration: BoxDecoration(
+          //             color: controller.isWalletButton ? Colors.black87 : null,
+          //             border: Border.all(color: Colors.black45, width: 2),
+          //             borderRadius: BorderRadius.circular(20),
+          //           ),
+          //           child: Center(
+          //             child: Row(
+          //               mainAxisAlignment: MainAxisAlignment.center,
+          //               children: [
+          //                 const SizedBox(width: 5),
+          //                 Text(
+          //                   'View Project',
+          //                   style: TextStyle(
+          //                       fontSize: 16,
+          //                       fontWeight: FontWeight.w500,
+          //                       color: !controller.isWalletButton
+          //                           ? Colors.black87
+          //                           : Colors.white,
+          //                       letterSpacing: 0.4),
+          //                 ),
+          //               ],
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   );
+          // })
+        ],
+      ),
+    );
+  }
+}
+
+class GenieBoatCard extends StatelessWidget {
+  const GenieBoatCard({
     super.key,
     required this.data,
   });
@@ -132,9 +258,9 @@ class WeatherAppCard extends StatelessWidget {
                 maxHeight: 400, maxWidth: 400, minHeight: 200, minWidth: 200),
             margin: const EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
-              image: const DecorationImage(
+              image: DecorationImage(
                   alignment: Alignment.bottomCenter,
-                  image: AssetImage('assets/project/weather/focus_image.png')),
+                  image: AssetImage(data[3]['focusImage'].toString())),
               gradient: RadialGradient(
                 center: Alignment.bottomRight,
                 radius: 1,
@@ -198,6 +324,100 @@ class WeatherAppCard extends StatelessWidget {
   }
 }
 
+class WeatherAppCard extends StatelessWidget {
+  const WeatherAppCard({
+    super.key,
+    required this.data,
+  });
+
+  final List<Map<String, dynamic>> data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 670,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            constraints: const BoxConstraints(
+                maxHeight: 320, maxWidth: 250, minHeight: 100, minWidth: 100),
+            margin: const EdgeInsets.only(bottom: 15),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  alignment: Alignment.bottomCenter,
+                  image: AssetImage(data[4]['focusImage'].toString())),
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Text(data[4]['title'], style: AppTheme.titleStyle),
+          ),
+          SizedBox(
+            width: 250,
+            child: Text(data[4]['subtitle'], style: AppTheme.subtitleStyle),
+          ),
+          const Spacer(),
+          GetBuilder<GlobalController>(builder: (controller) {
+            return Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                onEnter: (_) => controller.musicButtonState(true),
+                onExit: (_) => controller.musicButtonState(false),
+                child: GestureDetector(
+                  onTap: () {
+                    Get.to(
+                      () => ProjectView(
+                        projectDetails: data[4],
+                      ),
+                      curve: Curves.easeInOut,
+                      transition: Transition.fade,
+                      duration: const Duration(milliseconds: 500),
+                    );
+                  },
+                  child: AnimatedContainer(
+                    height: 60,
+                    width: 150,
+                    duration: const Duration(milliseconds: 400),
+                    decoration: BoxDecoration(
+                      color: controller.isMusicPlayerButton
+                          ? Colors.black87
+                          : null,
+                      border: Border.all(color: Colors.black45, width: 2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(width: 5),
+                          Text(
+                            'View Project',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: !controller.isMusicPlayerButton
+                                    ? Colors.black87
+                                    : Colors.white,
+                                letterSpacing: 0.4),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          })
+        ],
+      ),
+    );
+  }
+}
+
 class WalletAppCard extends StatelessWidget {
   const WalletAppCard({
     super.key,
@@ -243,7 +463,7 @@ class WalletAppCard extends StatelessWidget {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () => Get.to(
-                    () => ProjectView(projectDetails: data[3]),
+                    () => ProjectView(projectDetails: data[2]),
                     curve: Curves.easeInOut,
                     transition: Transition.fade,
                     duration: const Duration(milliseconds: 500),

@@ -177,6 +177,7 @@ class ProjectDetails {
       ],
       "features": [
         'Developed using Flutter, Dart,Firebase Auth, Hive Database.',
+        'Handles State Management with Getx under Clean Architecture.',
         'Category management include income and expence and Transaction management',
         'Feedback option Email js with REST API.',
         'Handles State Management with Getx',
@@ -189,7 +190,7 @@ class ProjectDetails {
       'days': '18',
       'tools': 'Flutter,Dart,Vs code,Figma,EmailJs',
       'previous': 'Music Player',
-      'nextProject': 'Weather App',
+      'nextProject': 'Genie Boat',
       'focusImage': 'assets/project/wallet/focus_image.png',
       'applink': 'https://www.amazon.com/gp/product/B0CLKW1ZZJ',
       "images": [
@@ -211,6 +212,63 @@ class ProjectDetails {
       ]
     },
 
+    ///-------------------------------------------CHAT BOAT-----------------------------------------------------------------------
+
+    {
+      "title": 'Genie Boat',
+      "fullTitle": 'Chat Genie Boat',
+      "subtitle":
+          "Genie Boat is designed to facilitate efficient and engaging chatbot interactions.",
+      "fullSubtitle":
+          "Genie Boat Chatbot App is designed to facilitate efficient and engaging chatbot interactions, offering users seamless communication. The app empowers users with advanced features, including natural language understanding, personalized responses, and multi-platform support.",
+      "mainSpec": [
+        "Authentication",
+        "Language Understanding",
+        "Personalized Responses",
+        "Chat History",
+        "Chat With Image",
+        "Dark Mode"
+      ],
+      "specImages": [
+        'assets/project/nexon_ev/auth.png',
+        'assets/project/genie/language.png',
+        'assets/project/genie/response.png',
+        'assets/project/genie/history.png',
+        'assets/project/genie/chat.png',
+        'assets/project/genie/dark_mode.png'
+      ],
+      "features": [
+        'Developed using Flutter, Dart, Node.js with REST API.',
+        'Handles State Management with Getx under MVVM Architecture.',
+        'Integrated Google Gemini Api Using Google genarative ai package',
+        'Authentication features including login,signup,Continue with Google and forgot password functionality',
+        'Suitable for Android / IOS / WEB',
+      ],
+      'device': 'Android/IOS/WEB',
+      'role': 'Prefessional Project',
+      'type': 'Prefessional Project',
+      'days': '30',
+      'tools': 'Flutter,Dart,Firebase,Gemini Api,Vs code',
+      'previous': 'Wallet App',
+      'nextProject': 'Weather App',
+      'focusImage': 'assets/project/genie/10.png',
+      'applink': 'https://www.amazon.com/gp/product/B0DBGDPZMY',
+      'webUrl': 'https://boat-421717.web.app',
+      "images": [
+        'assets/project/genie/1.png',
+        'assets/project/genie/2.png',
+        'assets/project/genie/3.png',
+        'assets/project/genie/9.png',
+        'assets/project/genie/10.png',
+        'assets/project/genie/11.png',
+        'assets/project/genie/12.png',
+        'assets/project/genie/4.png',
+        'assets/project/genie/5.png',
+        'assets/project/genie/6.png',
+        'assets/project/genie/7.png',
+        'assets/project/genie/8.png',
+      ],
+    },
     // ----------------------------------WEATHER APP----------------------------------------------------------------
 
     {
@@ -242,7 +300,7 @@ class ProjectDetails {
       'type': 'Prefessional Project',
       'days': '7',
       'tools': 'Flutter,Dart,Weather Api, Vs code,Figma',
-      'previous': 'Wallet App',
+      'previous': 'Genie Boat',
       'nextProject': '',
       'focusImage': 'assets/project/weather/focus_image.png',
       'applink': 'https://www.amazon.com/gp/product/B0CLKVWV3Q',
@@ -255,23 +313,46 @@ class ProjectDetails {
       ]
     },
 
-    ///-------------------------------------------CHAT BOAT-----------------------------------------------------------------------
+    //-------------------------------------------Chat application-------------------------------------------
 
     {
-      "title": 'Chat Boat',
-      "fullTitle": 'Chat Boat',
-      "subtitle": "",
-      "fullSubtitle": "",
-      "mainSpec": [],
-      "specImages": [],
-      "features": [],
-      'device': 'Android/IOS/Web',
+      "title": 'Chatify',
+      "fullTitle": 'Chatify App',
+      "subtitle":
+          "Chatify App is designed to facilitate efficient and engaging Chating with your friends.",
+      "fullSubtitle":
+          "Chatify App is designed to facilitate efficient and engaging Chating with your friends , offering users seamless communication. The app empowers users with advanced features, including natural language understanding, personalized responses, and multi-platform support.",
+      "mainSpec": [
+        "Authentication",
+        "Language Understanding",
+        "Personalized Responses",
+        "Chat History",
+        "Chat With Image",
+      ],
+      "specImages": [
+        'assets/project/nexon_ev/auth.png',
+        'assets/project/genie/language.png',
+        'assets/project/genie/response.png',
+        'assets/project/genie/history.png',
+        'assets/project/genie/chat.png'
+      ],
+      "features": [
+        'Developed using Flutter, Dart, Node.js with REST API.',
+        'Handles State Management with Getx under MVVM Architecture.',
+        'Integrated Google Gemini Api Using Google genarative ai package',
+        'Authentication features including login,signup,Continue with Google,Contine with Facebook and forgot password functionality',
+        'Suitable for Android / IOS / WEB',
+      ],
+      'device': 'Android/IOS',
       'role': 'Prefessional Project',
       'type': 'Prefessional Project',
-      'days': '40',
-      'tools': 'Flutter,Dart,Firebase,Vs code,Figma',
-      'focusImage': 'assets/project/weather/focus_image.png',
-      'applink': 'https://www.amazon.com/gp/product/B0CLKVWV3Q',
+      'days': 'Progress',
+      'tools': 'Flutter,Dart,Firebase,Gemini Api,Vs code,Figma',
+      'previous': 'Wallet App',
+      'nextProject': 'Weather App',
+      'focusImage': '',
+      'applink': '',
+      'webUrl': '',
       "images": []
     },
   ];

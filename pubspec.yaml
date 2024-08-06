@@ -36,6 +36,9 @@ flutter:
     - assets/project/music/
     - assets/images/
     - assets/logo/
+    - assets/project/chatify/
+    - assets/project/genie/
+    - assets/project/genie_web/
 
   # fonts:
   #   - family: Schyler
