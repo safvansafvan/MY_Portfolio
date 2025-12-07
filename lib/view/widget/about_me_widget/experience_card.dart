@@ -75,13 +75,52 @@ class ExperienceMobileWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Credr',
+                  'Softreey',
                   style: titleStyle,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    'Dec 2023 - Present',
+                    'Feb 2024 - Present',
+                    style: secondaryStyle,
+                  ),
+                ),
+                Text(
+                  'Bengaluru, India',
+                  style: secondaryStyle,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 30, bottom: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Flutter Developer', style: titleStyle),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        child: Text(
+                          "Designed, developed, and deployed multiple production-ready Flutter applications for Android, iOS, and Web. Implemented Clean Architecture for scalable and maintainable codebases. Integrated Firebase, Razorpay, and Google Maps APIs for robust functionality. Optimized performance by reducing widget rebuilds and improving caching strategies. Collaborated with designers and backend teams to ensure high-quality deliverables on time.",
+                          style: subtitleStyle,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Text(
+                    'Credr',
+                    style: titleStyle,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    'Dec 2023 - Feb 2024',
                     style: secondaryStyle,
                   ),
                 ),
@@ -224,6 +263,10 @@ class ExperienceWebWidget extends StatelessWidget {
             'Experience',
             style: AppTheme.aboutLargeTitleStyle,
           ),
+          ExperienceCardSoftreey(
+              titleStyle: titleStyle,
+              secondaryStyle: secondaryStyle,
+              subtitleStyle: subtitleStyle),
           ExperienceCardOne(
               titleStyle: titleStyle,
               secondaryStyle: secondaryStyle,
@@ -388,6 +431,130 @@ class ExperienceCardOne extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       child: Text(
                         "We developed the CredR Royal application using Flutter, integrating robust features like authentication, bidding, vehicle search, orders, and a wallet with payment options. Employing GetX for state management ensured smooth and efficient app performance, while implementing secure authentication and payment gateways guaranteed user safety. This comprehensive approach resulted in a seamless and user-friendly experience for booking premium bikes.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ExperienceCardSoftreey extends StatelessWidget {
+  const ExperienceCardSoftreey({
+    super.key,
+    required this.titleStyle,
+    required this.secondaryStyle,
+    required this.subtitleStyle,
+  });
+
+  final TextStyle titleStyle;
+  final TextStyle secondaryStyle;
+  final TextStyle subtitleStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 50, bottom: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey[200]!, width: 4),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Left Column: Company Info
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Softreey', style: titleStyle),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Text('Feb 2024 – Present', style: secondaryStyle),
+                ),
+                Text('Bengaluru, India', style: secondaryStyle),
+              ],
+            ),
+          ),
+
+          // Right Column: Role + Projects (Scrollable)
+          Flexible(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 100),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Flutter Developer', style: titleStyle),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      child: Text(
+                        "Designed and developed multiple production-grade cross-platform applications using Flutter for Android, iOS, and Web. Implemented Clean Architecture, state management with GetX/Provider/GetX, Firebase backend, REST APIs, and third-party integrations (Razorpay, Google Maps, etc.). Focused on performance optimization, pixel-perfect UI, and seamless deployment to Play Store & App Store.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+
+                    const SizedBox(height: 32),
+
+                    // Project 1: Vacanzi Jobseeker
+                    Text('Vacanzi – Jobseeker App', style: titleStyle),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Text(
+                        "Developed a full-featured job search platform enabling users to discover jobs, apply instantly, build resumes, and track application status. Integrated Firebase Auth, Cloud Firestore, push notifications, and file storage for resume uploads. Implemented advanced search filters, saved jobs, and real-time application updates.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+
+                    // Project 2: Vacanzi Recruiter
+                    Text('Vacanzi Recruiter – Employer Dashboard',
+                        style: titleStyle),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Text(
+                        "Built the companion recruiter app for employers to post jobs, review applications, schedule interviews, and manage hiring pipelines. Features include candidate shortlisting, bulk actions, ATS-like tracking, and analytics dashboard. Used Firebase + REST APIs for real-time synchronization across platforms.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+
+                    // Project 3: Fesste
+                    Text('Fesste – Bulk Food Ordering for Events',
+                        style: titleStyle),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Text(
+                        "Created a specialized app for bulk food ordering tailored for weddings, corporate events, and catering services. Features menu customization, guest-wise ordering, real-time order tracking, payment splitting, and PDF invoice generation. Built with offline support and Firebase backend.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+
+                    // Project 4: Selfeey
+                    Text('Selfeey – Smart Workflow Automation',
+                        style: titleStyle),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Text(
+                        "Developed a productivity utility app offering smart automation tools and custom scripts for daily tasks. Includes background automation, clipboard manager, quick actions, and task scheduling. Engineered with isolates for heavy processing and local storage using Hive/SharedPreferences.",
+                        style: subtitleStyle,
+                      ),
+                    ),
+
+                    // Project 5: Kahani Box
+                    Text('Kahani Box – E-commerce for Books',
+                        style: titleStyle),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Text(
+                        "Built a complete e-commerce solution for book lovers featuring browsing by genre/author, wishlist, cart management, secure checkout via Razorpay/UPI, order tracking, and user reviews. Integrated Firebase Analytics and dynamic theming for personalized reading experience.",
                         style: subtitleStyle,
                       ),
                     ),

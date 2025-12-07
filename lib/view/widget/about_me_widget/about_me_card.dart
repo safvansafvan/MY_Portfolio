@@ -62,18 +62,18 @@ class TabletWidget extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 Text(
-                  "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                  "Results-driven Flutter Developer with 3.5+ years of hands-on experience delivering production-ready mobile and web applications.",
                   style: AppTheme.aboutCardText,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Text(
-                    "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
+                    "Skilled in building scalable, performant, and visually consistent apps. Adept in modern architectures, API integration, state management, and CI/CD deployment.",
                     style: AppTheme.aboutCardText,
                   ),
                 ),
                 Text(
-                  "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                  "Passionate about writing clean, maintainable code and delivering exceptional user experiences.",
                   style: AppTheme.aboutCardText,
                 ),
               ],
@@ -137,7 +137,7 @@ class WebWidget extends StatelessWidget {
                                     Padding(
                                       padding: const EdgeInsets.only(left: 300),
                                       child: Text(
-                                        "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                                        "Results-driven Flutter Developer with 3.5+ years of hands-on experience delivering production-ready mobile and web applications.",
                                         style: AppTheme.aboutCardText,
                                       ),
                                     ),
@@ -145,7 +145,7 @@ class WebWidget extends StatelessWidget {
                                       padding: const EdgeInsets.only(
                                           left: 300, top: 20),
                                       child: Text(
-                                        "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
+                                        "Skilled in building scalable, performant, and visually consistent apps. Adept in modern architectures, API integration, state management, and CI/CD deployment.",
                                         style: AppTheme.aboutCardText,
                                       ),
                                     )
@@ -160,7 +160,7 @@ class WebWidget extends StatelessWidget {
                                       child: SizedBox(
                                         width: 350,
                                         child: Text(
-                                          "Throughout my career, I've been passionate about creating mobile applications that provide exceptional user experiences. With over two years of experience in Flutter development.",
+                                          "Results-driven Flutter Developer with 3.5+ years of hands-on experience delivering production-ready mobile and web applications.",
                                           style: AppTheme.aboutCardText,
                                         ),
                                       ),
@@ -170,7 +170,7 @@ class WebWidget extends StatelessWidget {
                                       child: SizedBox(
                                         width: 350,
                                         child: Text(
-                                          "I have honed my skills in the Dart programming language and the Flutter framework, delivering pixel-perfect and efficient code for both web and mobile applications.",
+                                          "Skilled in building scalable, performant, and visually consistent apps. Adept in modern architectures, API integration, state management, and CI/CD deployment.",
                                           style: AppTheme.aboutCardText,
                                         ),
                                       ),
@@ -184,7 +184,7 @@ class WebWidget extends StatelessWidget {
                           child: SizedBox(
                             width: 730,
                             child: Text(
-                              "Currently i am working at CredR, I developed applications using Flutter,Dart,RestApi with GetX Mobx,MVVM And MVC architecture and deploying apps on Play Store and App Store Connect.",
+                              "Passionate about writing clean, maintainable code and delivering exceptional user experiences. Delivered multiple production-ready applications published across major app stores.",
                               style: AppTheme.aboutCardText,
                             ),
                           ),

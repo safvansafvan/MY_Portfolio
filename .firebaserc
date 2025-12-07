@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "myportfolio-c320a"
-  }
+  },
+  "targets": {
+    "myportfolio-c320a": {
+      "hosting": {
+        "my-site": [
+          "build/web"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
